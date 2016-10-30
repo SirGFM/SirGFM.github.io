@@ -1,5 +1,6 @@
 
-div.nearest-neighbor, img.nearest-neighbor {
+/** Source: http://stackoverflow.com/questions/14068103/disable-antialising-when-scaling-images */
+.nearest-neighbor {
     image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
     image-rendering: -moz-crisp-edges;          /* Firefox                        */
     image-rendering: -o-crisp-edges;            /* Opera                          */
@@ -9,8 +10,27 @@ div.nearest-neighbor, img.nearest-neighbor {
     -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
 }
 
+/** Source: http://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting-using-css */
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                    not supported by any browser */
+}
+
+
 div.gamelist {
+    position: relative;
     max-width: 702px;
+}
+
+div.gamelisting {
+    position: relative;
+    display:block;
+    float: left;
 }
 
 div.gameicon, div.gamedesc-visible {
@@ -62,7 +82,7 @@ div.gameiconoverlay {
 
 div.innergameicon {
     color:#ffffff;
-    text-align: center
+    text-align: center;
 }
 
 img.gamebutton {

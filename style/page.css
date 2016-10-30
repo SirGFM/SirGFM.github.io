@@ -1,0 +1,72 @@
+/**
+ * @file style/page.css
+ *
+ * Define styling common to all pages (e.g., the sidebar)
+ */
+
+body {
+    background-color: #222034;
+}
+
+div.header, div.content {
+    width:90%;
+    max-width: 780px;
+    float: none;
+    position:static;
+    margin: auto;
+}
+
+div.header {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    height: 64px;
+}
+
+h1.header {
+    float: left;
+    /* Color isn't set since it inherits the link's */
+}
+
+/** Social logos (CSS that follows Twitter's guidelines) */
+img.socialbt {
+    float: right;
+    width: 32px;
+    margin: 8px;
+    padding-top: 8px;
+}
+
+/** The sidebar */
+div.sidebar {
+    position:relative;
+    float: left;
+    clear: left;
+    padding-right: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    width: auto;
+    max-width: 240px;
+}
+
+/** Links on the sidebar */
+a.sidebar {
+    display: block;
+    margin: 8px;
+    text-align: center;
+}
+a.sidebar:link {
+    text-decoration: none;
+    color: #cbdbfc;
+}
+a.sidebar:visited {
+    text-decoration: none;
+    color: #9badb7;
+}
+a.sidebar:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+a.sidebar:active {
+    text-decoration: none;
+    color: #ffffff;
+}
+
