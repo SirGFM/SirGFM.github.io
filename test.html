@@ -10,21 +10,52 @@
     </head>
 
     <body>
+        <div class="gamelist">
         <div id="jjat" class="gameicon"
-                 onmouseover="ShowGameDetails(this, 'jjat')"
-                 onmouseout="HideGameDetails(this, 'jjat')"
-                 style="background-image:url('/img/game/icon/jjat_icon.gif')">
+                 onmouseover="ShowGameDetails(this)"
+                 onmouseout="HideGameDetails(this)"
+                 onclick="ShowGameDesc(this)"
+                 style="background-image:url('/img/game/icon/jjat.gif')">
             <div id="jjat-overlay" class="gameiconoverlay">
                 <div id="jjat-inner-title" class="innergameicon" >
-                    <p> JJAT </p>
+                    <h1> JJAT </h1>
                 </div> <!-- id="jjat-inner-title" -->
-                <a href="https://github.com/SirGFM/big-15">
+            </div> <!-- id="jjat-overlay" -->
+        </div> <!-- id="jjat" -->
+        <div id="jjat-desc" class="gamedesc-hidden">
+            <h1 class="gamedesc"> JJAT </h1>
+            <h2 class="gamedesc">
+                Available on <a href="http://gfm.itch.io/jjat">itch.io</a>
+            </h2>
+            <h3 class="gamedesc">
+                Made for:
+                <a href="http://www.bigfestival.com.br/games/839">Big Festival 2015</a>
+            </h2>
+            <a href="https://github.com/SirGFM/big-15"
+                    title="Get the game's source on Github">
+                <img id="jjat-repo-img" class="gamebutton"
+                        src="/img/button/GitHub-Mark-32px.png">
+                </img>
+            </a>
+        </div>
+
+        <div id="ld36" class="gameicon"
+                 onmouseover="ShowGameDetails(this, 'burning-light')"
+                 onmouseout="HideGameDetails(this, 'burning-light')"
+                 onclick="ShowGameDesc(this)"
+                 style="background-image:url('/img/game/icon/ld36.png')">
+            <div id="ld36-overlay" class="gameiconoverlay">
+                <div id="ld36-inner-title" class="innergameicon" >
+                    <h1> Burning Light </h1>
+                </div> <!-- id="jjat-inner-title" -->
+                <a href="https://github.com/SirGFM/ld36">
                     <img id="jjat-repo-img" class="gamebutton"
                             src="/img/button/GitHub-Mark-32px.png">
                     </img>
                 </a>
-            </div> <!-- id="jjat-overlay" -->
-        </div> <!-- id="jjat" -->
+            </div> <!-- id="ld36-overlay" -->
+        </div> <!-- id="ld36" -->
+        </div>
     </body>
 </html>
 
