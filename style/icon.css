@@ -78,11 +78,13 @@ div.gameiconoverlay {
     background-color: rgba(128, 128, 128, 0.5);
     width: 132px;
     height: 132px;
+    cursor: pointer;
 }
 
-div.innergameicon {
+div.gameicontitle {
     color:#ffffff;
     text-align: center;
+    cursor: inherit;
 }
 
 img.gamebutton {
