@@ -6,20 +6,52 @@
 
 body {
     background-color: #222034;
+    background-image: url('/img/bg/tile.png');
 }
 
-div.header, div.content {
+div.header, div.body {
     width:90%;
     max-width: 780px;
     float: none;
     position:static;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 4px;
+    display: table;
+}
+
+div.header, div.sidebar, div.content {
+    border-radius: 16px;
+    background-color: #222034;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-left: auto;
+    margin-top: auto;
 }
 
 div.header {
-    padding-top: 4px;
-    padding-bottom: 4px;
     height: 64px;
+    margin-right: auto;
+}
+
+div.sidebar, div.content {
+    position:relative;
+    float: left;
+}
+
+div.sidebar {
+    clear: left;
+    padding-right: 8px;
+    max-width: 180px;
+    width: 180px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+div.content {
+    /* TODO either center it on the available space or make it expand and fill
+     * all the available space */
 }
 
 h1.header {
@@ -33,18 +65,6 @@ img.socialbt {
     width: 32px;
     margin: 8px;
     padding-top: 8px;
-}
-
-/** The sidebar */
-div.sidebar {
-    position:relative;
-    float: left;
-    clear: left;
-    padding-right: 8px;
-    margin-left: 8px;
-    margin-right: 8px;
-    width: auto;
-    max-width: 240px;
 }
 
 /** Links on the sidebar */

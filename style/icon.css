@@ -21,12 +21,6 @@
                                     not supported by any browser */
 }
 
-
-div.gamelist {
-    position: relative;
-    max-width: 702px;
-}
-
 div.gamelisting {
     position: relative;
     display:block;
