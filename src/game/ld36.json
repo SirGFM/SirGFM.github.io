@@ -1,0 +1,24 @@
+{
+    "id": "ld36",
+    "title": "Burning Light",
+    "thumbnail": "ld36.png",
+    "image": "ld36.png",
+    "release_date": "2016-08-28",
+    "event": "Ludum Dare",
+    "event_edition": "#36 (compo)",
+    "event_theme": "Ancient Technology",
+    "event_start_date": "2016-08-26",
+    "event_end_date": "2016-08-29",
+    "event_entry": "http://ludumdare.com/compo/ludum-dare-36/?action=preview&uid=7375",
+    "source_code": "https://github.com/SirGFM/ld36/tree/ludumdare_36",
+    "timelapse": "https://www.youtube.com/watch?v=bUc21jlEE8s",
+    "platforms": {
+        "Windows": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld36/burning_light.zip",
+        "Linux": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld36/burning_light.tar.gz"
+    },
+    "tools": ["SDL2", "GFraMe v2"],
+    "short_description": "TODO",
+    "description": [
+        "On a distant land, an explorer found a set of mystical lenses. Any ray of light that passes through it gets perfectly focused into a single direction, sometimes seemingly defying physics. Also, any ray that passes through it becomes able to light flammable materials.",
+        "On that same land, the explorer found some small shrines that resembles torches and perhaps could be lit... "]
+}

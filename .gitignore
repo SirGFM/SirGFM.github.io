@@ -1,4 +1,5 @@
 
 # Ignore all swap files
 *.swp
+*.pyc
 
