@@ -52,6 +52,7 @@ div.sidebar {
 div.content {
     /* TODO either center it on the available space or make it expand and fill
      * all the available space */
+    max-width: 586px;
 }
 
 h1.header {

@@ -64,6 +64,36 @@ class Game:
         try: return self._decoded['short_description']
         except: return 'No short description'
 
+    def is_on_itchio(self):
+        """Check if the game is available through Itch.io"""
+        try: return 'itch.io' in self._decoded['distribution']
+        except: return False
+
+    def is_on_directlink(self):
+        """Check if the game is available through a direct link"""
+        try: return 'direct_link' in self._decoded['distribution']
+        except: return False
+
+    def directlink_platforms(self):
+        """Try to retrieve the component's downlod URL for each platform"""
+        try: return self._decoded['distribution']['direct_link']
+        except: return {'No platform': 'No_url'}
+
+    def itch_link(self):
+        """Try to retrieve the component's Itch.io URL"""
+        try: return self._decoded['distribution']['itch.io']['url']
+        except: return 'No Itch.io URL'
+
+    def itch_platforms(self):
+        """Try to retrieve the component's list of available platforms (on Itch.io)"""
+        try:
+            plat = self._decoded['distribution']['itch.io']['platforms']
+            if len(plat) <= 1:
+                return plat
+            else:
+                return ', '.join(plat[:-1]) + ' and ' + plat[-1]
+        except: return 'No platform'
+
 class GameWriter:
     def __init__(self, json_file):
         self._game = Game(json_file)
@@ -120,6 +150,26 @@ class GameWriter:
                    '</img>'.format(self._game.id()))
         self.untab()
         self.write('</a>')
+
+    def insert_downloadlink(self):
+        self.write('<p class="gamedesc">', do_break=False)
+        if self._game.is_on_itchio():
+            self.write('Get it now on ', do_break=False)
+            self.write('<a href="{}" title="Procceed to {}\'s page on Itch.io">'.format(
+                    self._game.itch_link(), self._game.title()), do_break=False)
+            self.write('Itch.io', do_break=False)
+            self.write('<small> Available for {} </small>'.format(self._game.itch_platforms()), do_break=False)
+            self.write('</a>', do_break=False)
+        elif self._game.is_on_directlink():
+            self.write('')
+            self.write('Get it now for: ')
+            self.write('<ul>')
+            self.tab()
+            for platform, url in self._game.directlink_platforms().iteritems():
+                self.write('<li> <a href="{}"> {} </a></li>'.format(url, platform))
+            self.untab()
+            self.write('</ul>')
+        self.write('</p>')
 
     def insert(self, fp):
         """Insert this component (game icon + description) into a page
@@ -189,7 +239,7 @@ class GameWriter:
 
         self.write_content('p', self._game.short_desc(), style='gamedesc')
 
-        # TODO Download link
+        self.insert_downloadlink()
 
         self.insert_repo()
 
