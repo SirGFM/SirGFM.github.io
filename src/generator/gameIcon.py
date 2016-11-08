@@ -1,10 +1,18 @@
 
-import json
+import baseWriter
 import defer
+import json
+
 from datetime import date
 
 class Game:
+    """Wraps a game that may be inserted as an icon, that may have its own page and stuff"""
+
     def __init__(self, json_file):
+        """Initialize a new game from a JSON file
+
+        json_file -- Name of the JSON file for the game
+        """
         # TODO Try-except this
         fp = open(json_file, 'rt')
         self._decoded = json.load(fp)
@@ -17,7 +25,6 @@ class Game:
 
     def icon(self):
         """Try to retrieve the component's icon (must be located at img/game/icon/)"""
-        # TODO Create this default image on img/game/icon/
         try: return self._decoded['image']
         except: return 'no_image.png'
 
@@ -94,51 +101,23 @@ class Game:
                 return ', '.join(plat[:-1]) + ' and ' + plat[-1]
         except: return 'No platform'
 
-class GameWriter:
+class GameWriter(baseWriter.BaseWriter):
+    """Writes HTML for 'Game's objects"""
+
     def __init__(self, json_file):
+        """Create a new writer for a game
+
+        json_file -- Name of the JSON file for the game
+        """
+        super(GameWriter, self).__init__()
         self._game = Game(json_file)
-        self._fp = None
-        self._indent = 0
 
     def set_game(self, game):
+        """Set the writer's game
+
+        game -- The game
+        """
         self._game = game
-
-    def set_output(self, fp):
-        """Set the current output file"""
-        self._fp = fp
-
-    def tab(self):
-        """Increase the indentation"""
-        self._indent += 1
-
-    def untab(self):
-        """Decrease the indentation"""
-        self._indent -= 1
-        if self._indent < 0:
-            self._indent = 0
-
-    def write(self, string, do_break=True):
-        """Write an indented component at the stored file
-
-        string -- String component to be written
-        do_break -- Whether a new line should be added after the component
-        """
-        self._fp.write('    ' * self._indent)
-        self._fp.write(string)
-        if do_break:
-            self._fp.write('\n')
-
-    def write_content(self, tag, string, style=None):
-        """Write an auto-contained (i.e., a paragraph) content
-
-        tag -- Content's HTML tag
-        string -- String component to be written
-        style -- CSS class to be used with the tag
-        """
-        if style is not None:
-            self.write('<{} class="{}"> {} </{}>'.format(tag, style, string, tag))
-        else:
-            self.write('<{}> {} </{}>'.format(tag, string, tag))
 
     def insert_repo(self):
         """Insert a image linked to the repository. If no URL was specified, this functions does nothing"""
@@ -152,6 +131,7 @@ class GameWriter:
         self.write('</a>')
 
     def insert_downloadlink(self):
+        """Insert the link to the download page(s)"""
         self.write('<p class="gamedesc">', do_break=False)
         if self._game.is_on_itchio():
             self.write('Get it now on ', do_break=False)
