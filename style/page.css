@@ -21,7 +21,7 @@ div.header, div.body {
     display: table;
 }
 
-div.header, div.sidebar, div.content {
+div.header, div.sidebar, div.content, div.footer {
     border-radius: 16px;
     background-color: #222034;
     padding-top: 4px;
@@ -38,6 +38,7 @@ div.header {
 div.sidebar, div.content {
     position:relative;
     float: left;
+    margin-bottom: 4px;
 }
 
 div.sidebar {
@@ -46,13 +47,18 @@ div.sidebar {
     max-width: 180px;
     width: 180px;
     margin-right: 4px;
-    margin-bottom: 4px;
 }
 
 div.content {
     /* TODO either center it on the available space or make it expand and fill
      * all the available space */
     max-width: 586px;
+}
+
+div.footer {
+    clear: right;
+    float: right;
+    width: 100%;
 }
 
 h1.header {
