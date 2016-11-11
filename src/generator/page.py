@@ -37,6 +37,7 @@ class PageWriter(baseWriter.BaseWriter):
 
         self._insert_head(style_list, script_list)
         self._insert_body()
+        self._insert_footer()
 
         self.untab()
         self.write('</html>')
@@ -70,7 +71,8 @@ class PageWriter(baseWriter.BaseWriter):
         defer_.run()
 
     def _insert_body():
-        """Inserts the page's <body>. Every page is divided between two 'sections': a header and a content"""
+        """Inserts the page's <body>. Every page is divided between three 'sections':
+        a header, a content and a footer"""
         self.write('<body>')
         self.tab()
 
@@ -134,4 +136,17 @@ class PageWriter(baseWriter.BaseWriter):
         self.tab()
 
         defer_.run()
+
+    def _insert_footer():
+        """Inserts the page's footer. Two components are added: a 'sidebar' (from the navigator
+        passed as argument on the constructor) and a 'content', which is dependent on each actual page
+        """
+        defer_ = defer.Defer()
+
+        self.write('<div id="page-footer" class="footer">')
+        defer_.push(lambda :self.write('</div> <!-- footer -->'))
+        defer_.push(self.untab)
+        self.tab()
+
+        self.write_content('p', const.PAGE_FOOTER, style="footer")
 

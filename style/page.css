@@ -4,95 +4,173 @@
  * Define styling common to all pages (e.g., the sidebar)
  */
 
+html, body {
+    /** Ensure the page uses all available space (really necessary?) */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    /** Set BG pattern and fallback color */
     background-color: #222034;
     background-image: url('/img/bg/tile.png');
 }
 
-div.header, div.body {
-    width:90%;
+div.header {
+    /* Set the width to at most 780 px, but otherwise to 90% of the window */
     max-width: 780px;
-    float: none;
-    position:static;
+    width:90%;
+    /* Set the height to at least 64 px, but expand as necessary */
+    min-height: 64px;
+    height: auto;
+    /* Setting a line height makes the text vertically centered because magic */
+    line-height: 64px;
+    /* Center it horizontally on the available space */
     margin-left: auto;
     margin-right: auto;
-    margin-top: auto;
+    /* Separate it from the top of the window */
+    margin-top: 8px;
+    /* Leave 4 pixels between this and the element beneath */
     margin-bottom: 4px;
-    display: table;
-}
-
-div.header, div.sidebar, div.content, div.footer {
+    /* Make the borders round and set the background/inner color */
     border-radius: 16px;
     background-color: #222034;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    margin-left: auto;
-    margin-top: auto;
-}
-
-div.header {
-    height: 64px;
-    margin-right: auto;
-}
-
-div.sidebar, div.content {
-    position:relative;
-    float: left;
-    margin-bottom: 4px;
-}
-
-div.sidebar {
-    clear: left;
-    padding-right: 8px;
-    max-width: 180px;
-    width: 180px;
-    margin-right: 4px;
-}
-
-div.content {
-    /* TODO either center it on the available space or make it expand and fill
-     * all the available space */
-    max-width: 586px;
-}
-
-div.footer {
-    clear: right;
-    float: right;
-    width: 100%;
-}
-
-h1.header {
-    float: left;
-    /* Color isn't set since it inherits the link's */
 }
 
 /** Social logos (CSS that follows Twitter's guidelines) */
 img.socialbt {
+    /* Position these elements at the right side of the div (must be declared
+     * on the opposite order they will appear!!) */
     float: right;
+    /* Fix the width to 32px (minimum allowed by Twitter) */
     width: 32px;
-    margin: 8px;
-    padding-top: 8px;
+    /* Leave at least 50% of the image's width of free room around it (i.e., 8
+     * pixels to each side) */
+    margin-left: 8px;
+    margin-right: 8px;
+    /* Slight hack to center the image on its parent div... */
+    margin-top: 16px;
 }
 
-/** Links on the sidebar */
-a.sidebar {
-    display: block;
-    margin: 8px;
-    text-align: center;
+/** Used by the page's title (which is also a link) */
+a.header {
+    /* Separate the title from the edge of its parent div */
+    margin-left: 8px;
+    /* Make it take as much (or as few) space as needed */
+    width: auto;
+    /* Make the text as big as a headding... maybe... */
+    font-size: 2em;
+    font-weight: bold;
 }
-a.sidebar:link {
+
+div.footer {
+    /* Set the width to at most 780 px, but otherwise to 90% of the window */
+    max-width: 780px;
+    width:90%;
+    /* Set the footer's height */
+    height: 32px;
+    /* Setting a line height makes the text vertically centered because magic */
+    line-height: 32px;
+    /* Center the text horizontally */
+    text-align: center;
+    /* Center it horizontally on the available space */
+    margin-left: auto;
+    margin-right: auto;
+    /* Separate it from the bottom of the window */
+    margin-bottom: 8px;
+    /* Make the borders round and set the background/inner color */
+    border-radius: 16px;
+    background-color: #222034;
+}
+
+p.footer {
+    /* Set the footer's color. */
+    color: #9badb7;
+    /* Make sure the font is small */
+    font-size: smaller;
+    /* Avoid "bleeding" this paragraph's margin above the div */
+    margin: 0;
+    /* NOTE: Centering is defined by its parent div. */
+}
+
+div.body {
+    /* Set the width to at most 780 px, but otherwise to 90% of the window */
+    max-width: 780px;
+    width:90%;
+    min-height: 100%;
+    height: 100%;
+    /* Center it horizontally on the available space */
+    margin-left: auto;
+    margin-right: auto;
+    /* Leave 4 pixels between this and the element beneath */
+    margin-bottom: 4px;
+}
+
+div.sidebar {
+    /* Ensure the sidebar is the left most element */
+    float: left;
+    clear: left;
+    /* Ensure the sidebar has between 100 and 180 pixels, but resize it with the
+     * window */
+    min-width: 100px;
+    max-width: 156px;
+    width: 20%;
+    /* Make the sidebar fill the window or use up as much space as needed */
+    height: 100%;
+    min-height: 100%;
+    /* Center the text horizontally */
+    text-align: center;
+    /* Leave 4 pixels between this and the elements the one at its right */
+    margin-right: 4px;
+    /* Make the borders round and set the background/inner color */
+    border-radius: 16px;
+    background-color: #222034;
+}
+
+a.sidebar {
+    /* Ensure every link is alone on its own line */
+    display: block;
+    /* Add 8 pixels of room around every link */
+    margin: 8px;
+}
+
+div.content {
+    /* Ensure the content is the right most element */
+    float: right;
+    width: 80%;
+    min-width: 260px;
+    max-width: 620px;
+    /* Make the sidebar fill the window or use up as much space as needed */
+    height: 100%;
+    min-height: 100%;
+    /* Center the text horizontally */
+    text-align: center;
+    /* Make the borders round and set the background/inner color */
+    border-radius: 16px;
+    background-color: #222034;
+}
+
+/**
+ * Default link styling:
+ *  - Underscore only on hover
+ *  - Click removes underscore but keeps color
+ */
+a {
     text-decoration: none;
+}
+a:link {
     color: #cbdbfc;
 }
-a.sidebar:visited {
-    text-decoration: none;
+a:visited {
     color: #9badb7;
 }
-a.sidebar:hover {
+a:hover {
     text-decoration: underline;
     color: #ffffff;
 }
-a.sidebar:active {
+a:active {
     text-decoration: none;
     color: #ffffff;
 }
