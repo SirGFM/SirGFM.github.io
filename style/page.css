@@ -7,7 +7,6 @@
 html, body {
     /** Ensure the page uses all available space (really necessary?) */
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -65,6 +64,51 @@ a.header {
     font-weight: bold;
 }
 
+div.sidebar {
+    /* Set the width to at most 780 px, but otherwise to 90% of the window */
+    max-width: 780px;
+    width:90%;
+    /* Set the height to at least 48 px, but expand as necessary */
+    height: auto;
+    min-height: 48px;
+    /* Setting a line height makes the text vertically centered because magic */
+    line-height: 32px;
+    /* Center it horizontally on the available space */
+    margin-left: auto;
+    margin-right: auto;
+    /* Center the text horizontally */
+    text-align: center;
+    /* Leave 4 pixels between this and the elements the one at its right */
+    margin-bottom: 4px;
+    /* Make the borders round and set the background/inner color */
+    border-radius: 16px;
+    background-color: #222034;
+}
+
+a.sidebar {
+    /* Ensure every link has some breathing room around it */
+    display: inline-block;
+    /* Add 8 pixels of room around every link */
+    margin: 8px;
+}
+
+div.content {
+    /* Set the width to at most 780 px, but otherwise to 90% of the window */
+    max-width: 780px;
+    width:90%;
+    /* Make the sidebar fill the window or use up as much space as needed */
+    height: auto;
+    display: table;
+    /* Center it horizontally on the available space */
+    margin-left: auto;
+    margin-right: auto;
+    /* Leave 4 pixels between this and the element beneath */
+    margin-bottom: 4px;
+    /* Make the borders round and set the background/inner color */
+    border-radius: 16px;
+    background-color: #222034;
+}
+
 div.footer {
     /* Set the width to at most 780 px, but otherwise to 90% of the window */
     max-width: 780px;
@@ -93,63 +137,6 @@ p.footer {
     /* Avoid "bleeding" this paragraph's margin above the div */
     margin: 0;
     /* NOTE: Centering is defined by its parent div. */
-}
-
-div.body {
-    /* Set the width to at most 780 px, but otherwise to 90% of the window */
-    max-width: 780px;
-    width:90%;
-    min-height: 100%;
-    height: 100%;
-    /* Center it horizontally on the available space */
-    margin-left: auto;
-    margin-right: auto;
-    /* Leave 4 pixels between this and the element beneath */
-    margin-bottom: 4px;
-}
-
-div.sidebar {
-    /* Ensure the sidebar is the left most element */
-    float: left;
-    clear: left;
-    /* Ensure the sidebar has between 100 and 180 pixels, but resize it with the
-     * window */
-    min-width: 100px;
-    max-width: 156px;
-    width: 20%;
-    /* Make the sidebar fill the window or use up as much space as needed */
-    height: 100%;
-    min-height: 100%;
-    /* Center the text horizontally */
-    text-align: center;
-    /* Leave 4 pixels between this and the elements the one at its right */
-    margin-right: 4px;
-    /* Make the borders round and set the background/inner color */
-    border-radius: 16px;
-    background-color: #222034;
-}
-
-a.sidebar {
-    /* Ensure every link is alone on its own line */
-    display: block;
-    /* Add 8 pixels of room around every link */
-    margin: 8px;
-}
-
-div.content {
-    /* Ensure the content is the right most element */
-    float: right;
-    width: 80%;
-    min-width: 260px;
-    max-width: 620px;
-    /* Make the sidebar fill the window or use up as much space as needed */
-    height: 100%;
-    min-height: 100%;
-    /* Center the text horizontally */
-    text-align: center;
-    /* Make the borders round and set the background/inner color */
-    border-radius: 16px;
-    background-color: #222034;
 }
 
 /**
