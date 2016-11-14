@@ -4,6 +4,17 @@
  * Define styling common to all pages (e.g., the sidebar)
  */
 
+/** Source: http://stackoverflow.com/questions/14068103/disable-antialising-when-scaling-images */
+.nearest-neighbor {
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated;                 /* Chrome */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
+
 html, body {
     /** Ensure the page uses all available space (really necessary?) */
     width: 100%;
@@ -38,30 +49,34 @@ div.header {
     background-color: #222034;
 }
 
+img.header, img.header_last  {
+    /* Make it take as much (or as few) space as needed */
+    width: auto;
+    /* Make it take as much (or as few) space as needed */
+    height: auto;
+    /* Separate each word from the one to its left by 8 pixels */
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+img.header_last {
+    margin-right: 8px;
+}
+
 /** Social logos (CSS that follows Twitter's guidelines) */
 img.socialbt {
-    /* Position these elements at the right side of the div (must be declared
-     * on the opposite order they will appear!!) */
-    float: right;
     /* Fix the width to 32px (minimum allowed by Twitter) */
     width: 32px;
     /* Leave at least 50% of the image's width of free room around it (i.e., 8
      * pixels to each side) */
     margin-left: 8px;
     margin-right: 8px;
-    /* Slight hack to center the image on its parent div... */
-    margin-top: 16px;
+    vertical-align: middle;
 }
 
-/** Used by the page's title (which is also a link) */
-a.header {
-    /* Separate the title from the edge of its parent div */
-    margin-left: 8px;
-    /* Make it take as much (or as few) space as needed */
-    width: auto;
-    /* Make the text as big as a headding... maybe... */
-    font-size: 2em;
-    font-weight: bold;
+/** Overwrite the underline on the title */
+a.header:hover {
+    text-decoration: none;
 }
 
 div.sidebar {

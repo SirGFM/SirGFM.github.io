@@ -92,23 +92,23 @@ class PageWriter(baseWriter.BaseWriter):
         defer_.push(self.untab)
         self.tab()
 
-        self.write('<a class="sidebar" href="/">')
+        self.write('<a class="header" href="/">')
         self.tab()
-        self.write_content('h1', const.PAGE_TITLE, style="header")
+        self.write('<img class="header nearest-neighbor" src="/img/title/01_gfms.png"> </img>')
+        self.write('<img class="header nearest-neighbor" src="/img/title/02_game.png"> </img>')
+        self.write('<img class="header nearest-neighbor" src="/img/title/03_corner.png"> </img>')
         self.untab()
         self.write('</a>')
 
-        # Since those images use 'float:right;', they must be placed on the
-        # reverse order they should be rendered
-        self.write('<a href="https://twitter.com/SirGFM" title="Follow me on Twitter">')
-        self.tab()
-        self.write('<img class="socialbt" src="/img/button/Twitter_Social_Icon_Circle_Color.png"> </img>')
-        self.untab()
-        self.write('</a>')
-
-        self.write('<a href="https://github.com/SirGFM/ld36" title="Check out my projects on Github">')
+        self.write('<a class="header" href="https://github.com/SirGFM/ld36" title="Check out my projects on Github">')
         self.tab()
         self.write('<img class="socialbt" src="/img/button/GitHub-Mark-Light-32px.png"> </img>')
+        self.untab()
+        self.write('</a>')
+
+        self.write('<a class="header" href="https://twitter.com/SirGFM" title="Follow me on Twitter">')
+        self.tab()
+        self.write('<img class="socialbt" src="/img/button/Twitter_Social_Icon_Circle_Color.png"> </img>')
         self.untab()
         self.write('</a>')
 
