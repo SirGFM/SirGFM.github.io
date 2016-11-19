@@ -2,6 +2,7 @@
 import baseWriter
 import const
 import defer
+import navigator
 
 class PageWriter(baseWriter.BaseWriter):
     """Writer for a complete page
@@ -11,17 +12,21 @@ class PageWriter(baseWriter.BaseWriter):
         - Call 'insert' with the required *.css and *.js.
     """
 
-    def __init__(self, out, nav):
-        """Initializes a PageWriter
+    def __init__(self, title, url, nav):
+        """Initializes a PageWriter.
+        Note that the page is registered into the navigator as soon as it's instantiated
 
-        out -- Name of the output file to be generated
+        title -- Title used on the navigation bar
+        url -- Page's address. Also used to generate the page's output file (by appending .html and removing the leading '/')
         nav -- Navigation object (which should be fed with every page before being inserted)
         """
         super(PageWriter, self).__init__()
-        self._out = out
+        self._out = url[1:] + '.html'
         self._nav = nav
+        self._nav.register(title, url)
 
     def insert_content(self):
+        """Overwrite this function on sub-classes to create new pages"""
         return
 
     def create(self, style_list=['page.css'], script_list=[]):
@@ -30,7 +35,7 @@ class PageWriter(baseWriter.BaseWriter):
         style_list -- List of style (*.css) files to be included in this page
         script_list -- List of scripts (*.js) to be included in this page
         """
-        self.set_output(open(out, 'wt'))
+        self.set_output(open(self._out, 'wt'))
         self.write('<!DOCTYPE html>')
         self.write('<html lang="en">')
         self.tab()
@@ -69,25 +74,25 @@ class PageWriter(baseWriter.BaseWriter):
 
         defer_.run()
 
-    def _insert_body():
+    def _insert_body(self):
         """Inserts the page's <body>. Every page is divided into four 'sections':
         a header, a navigation, a content and a footer"""
         self.write('<body>')
         self.tab()
 
         self._insert_body_header()
-        self._nav.insert()
+        self._nav.insert(self)
         self._insert_content()
         self._insert_footer()
 
         self.untab()
         self.write('</body>')
 
-    def _insert_body_header():
+    def _insert_body_header(self):
         """Inserts the page's title (i.e., the header on the top of the page)"""
         defer_ = defer.Defer()
 
-        self.write('<div id="page-header" class="header>')
+        self.write('<div id="page-header" class="header">')
         defer_.push(lambda :self.write('</div> <!-- header -->'))
         defer_.push(self.untab)
         self.tab()
@@ -114,7 +119,7 @@ class PageWriter(baseWriter.BaseWriter):
 
         defer_.run()
 
-    def _insert_content():
+    def _insert_content(self):
         """Inserts the page's content. Two components are added: a 'sidebar' (from the navigator
         passed as argument on the constructor) and a 'content', which is dependent on each actual page
         """
@@ -130,7 +135,7 @@ class PageWriter(baseWriter.BaseWriter):
 
         defer_.run()
 
-    def _insert_footer():
+    def _insert_footer(self):
         """Inserts the page's footer. Two components are added: a 'sidebar' (from the navigator
         passed as argument on the constructor) and a 'content', which is dependent on each actual page
         """

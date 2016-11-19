@@ -1,5 +1,5 @@
 
-class BaseWriter:
+class BaseWriter(object):
     """Helpers to write HTML pages"""
 
     def __init__(self):
@@ -22,7 +22,11 @@ class BaseWriter:
         """Set the current output file"""
         self._fp = fp
 
-    def close_output():
+    def get_output(self):
+        """Return the current output file"""
+        return self._fp
+
+    def close_output(self):
         """Closes the current file"""
         self._fp.close()
         self._fp = None
