@@ -1,8 +1,8 @@
 
-import baseWriter
-import defer
+from generator.baseWriter import BaseWriter
+from generator.defer import Defer
 
-class Navigator(baseWriter.BaseWriter):
+class Navigator(BaseWriter):
     """The navigation bar
 
     Every page that is accessible through the navigation bar has to be registered into it.
@@ -36,7 +36,7 @@ class Navigator(baseWriter.BaseWriter):
 
         page -- The current page
         """
-        defer_ = defer.Defer()
+        defer_ = Defer()
 
         self.set_output(page.get_output())
         self.set_indent(page.get_indent())

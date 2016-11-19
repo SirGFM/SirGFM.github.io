@@ -1,10 +1,9 @@
 
-import baseWriter
-import const
-import defer
-import navigator
+from generator import const
+from generator.baseWriter import BaseWriter
+from generator.defer import Defer
 
-class PageWriter(baseWriter.BaseWriter):
+class PageWriter(BaseWriter):
     """Writer for a complete page
 
     The expected way to use this is:
@@ -21,7 +20,10 @@ class PageWriter(baseWriter.BaseWriter):
         nav -- Navigation object (which should be fed with every page before being inserted)
         """
         super(PageWriter, self).__init__()
-        self._out = url[1:] + '.html'
+        if url == '/':
+            self._out = 'index.html'
+        else:
+            self._out = url[1:] + '.html'
         self._nav = nav
         self._nav.register(title, url)
 
@@ -53,7 +55,7 @@ class PageWriter(baseWriter.BaseWriter):
         style_list -- List of style (*.css) files to be included in this page
         script_list -- List of scripts (*.js) to be included in this page
         """
-        defer_ = defer.Defer()
+        defer_ = Defer()
 
         self.write('<head>')
         defer_.push(lambda :self.write('</head>'))
@@ -90,7 +92,7 @@ class PageWriter(baseWriter.BaseWriter):
 
     def _insert_body_header(self):
         """Inserts the page's title (i.e., the header on the top of the page)"""
-        defer_ = defer.Defer()
+        defer_ = Defer()
 
         self.write('<div id="page-header" class="header">')
         defer_.push(lambda :self.write('</div> <!-- header -->'))
@@ -123,7 +125,7 @@ class PageWriter(baseWriter.BaseWriter):
         """Inserts the page's content. Two components are added: a 'sidebar' (from the navigator
         passed as argument on the constructor) and a 'content', which is dependent on each actual page
         """
-        defer_ = defer.Defer()
+        defer_ = Defer()
 
         self.write('<div id="page-content" class="content">')
         defer_.push(lambda :self.write('</div> <!-- content -->'))
@@ -139,7 +141,7 @@ class PageWriter(baseWriter.BaseWriter):
         """Inserts the page's footer. Two components are added: a 'sidebar' (from the navigator
         passed as argument on the constructor) and a 'content', which is dependent on each actual page
         """
-        defer_ = defer.Defer()
+        defer_ = Defer()
 
         self.write('<div id="page-footer" class="footer">')
         defer_.push(lambda :self.write('</div> <!-- footer -->'))

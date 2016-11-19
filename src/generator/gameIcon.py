@@ -1,11 +1,11 @@
 
-import baseWriter
-import defer
 import json
+from generator.baseWriter import BaseWriter
+from generator.defer import Defer
 
 from datetime import date
 
-class Game:
+class Game(object):
     """Wraps a game that may be inserted as an icon, that may have its own page and stuff"""
 
     def __init__(self, json_file):
@@ -101,7 +101,7 @@ class Game:
                 return ', '.join(plat[:-1]) + ' and ' + plat[-1]
         except: return 'No platform'
 
-class GameWriter(baseWriter.BaseWriter):
+class GameWriter(BaseWriter):
     """Writes HTML for 'Game's objects"""
 
     def __init__(self, json_file):
@@ -156,7 +156,7 @@ class GameWriter(baseWriter.BaseWriter):
         
         fp -- The output file
         """
-        defer_ = defer.Defer()
+        defer_ = Defer()
         self.set_output(fp)
         self.write('<div id="{}" class="gamelisting" onclick="ShowGameDesc(this)">'.format(self._game.id()))
         defer_.push(lambda :self.write('</div> <!-- {} gamelisting -->'.format(self._game.id())))
@@ -173,7 +173,7 @@ class GameWriter(baseWriter.BaseWriter):
         
         fp -- The output file
         """
-        defer_ = defer.Defer()
+        defer_ = Defer()
 
         self.write('<div id="{}-icon" class="gameicon" onmouseover="ShowGameDetails(this)" '
                    'onmouseout="HideGameDetails(this)" '
@@ -202,7 +202,7 @@ class GameWriter(baseWriter.BaseWriter):
         
         fp -- The output file
         """
-        defer_ = defer.Defer()
+        defer_ = Defer()
 
         self.write('<div id="{}-desc" class="gamedesc-hidden">'.format(self._game.id()))
         defer_.push(lambda: self.write('</div> <!-- {}-desc -->'.format(self._game.id())))
