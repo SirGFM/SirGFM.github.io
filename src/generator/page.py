@@ -24,6 +24,7 @@ class PageWriter(BaseWriter):
             self._out = 'index.html'
         else:
             self._out = url[1:] + '.html'
+            url += '.html'
         self._nav = nav
         self._nav.register(title, url)
 

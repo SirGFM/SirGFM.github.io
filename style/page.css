@@ -166,6 +166,12 @@ h2.content {
     margin-left: 0.9em;
 }
 
+h3.content {
+    color: #cbdbfc;
+    font-size: 1.05em;
+    margin-left: 0.9em;
+}
+
 p.content {
     color: #9badb7;
     font-size: 1em;

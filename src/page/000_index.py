@@ -23,7 +23,7 @@ class Page(PageWriter):
                 'I\'ve developed. Select a category above to explore its games. (NOTE: This page ' +
                 'is still a WIP and some games may have broken links...)', style='content')
 
-        self.write_content('h1', 'Contact', style='content')
+        #self.write_content('h1', 'Contact', style='content')
         # TODO Add Twitter, devlog, e-mail & github
 
         self.write_content('h1', 'Current projects', style='content')
@@ -44,7 +44,7 @@ class Page(PageWriter):
                         style='content')
         self.write_content('p', 'It\'s always being enhanced, and the next planned refactor should enable ' +
                 'supporting older platforms (e.g.,  Mega Drive/Sega Genesis through ' +
-                '<a href="https://github.com/kubilus1/gendev" ">GENDEV</a>). I don\'t know when ' +
+                '<a href="https://github.com/kubilus1/gendev" >GENDEV</a>). I don\'t know when ' +
                 'this new version will be started, though...', style='content')
 
         self.write_content('h2', 'c_synth', style='content')

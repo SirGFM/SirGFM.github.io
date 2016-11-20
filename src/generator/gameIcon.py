@@ -125,14 +125,13 @@ class GameWriter(BaseWriter):
             return
         self.write('<a href="{}" title="Clone the game\'s source">'.format(self._game.repo()))
         self.tab()
-        self.write('<img id="{}-repo-img" class="gamebutton" src="/img/button/GitHub-Mark-32px.png">'
-                   '</img>'.format(self._game.id()))
+        self.write_content('p', 'Source code', style='content')
         self.untab()
         self.write('</a>')
 
     def insert_downloadlink(self):
         """Insert the link to the download page(s)"""
-        self.write('<p class="gamedesc">', do_break=False)
+        self.write('<p class="content">', do_break=False)
         if self._game.is_on_itchio():
             self.write('Get it now on ', do_break=False)
             self.write('<a href="{}" title="Procceed to {}\'s page on Itch.io">'.format(
@@ -151,28 +150,27 @@ class GameWriter(BaseWriter):
             self.write('</ul>')
         self.write('</p>')
 
-    def insert(self, fp):
+    def insert(self, page):
         """Insert this component (game icon + description) into a page
         
-        fp -- The output file
+        page -- The writer of the current page
         """
         defer_ = Defer()
-        self.set_output(fp)
+        self.set_indent(page.get_indent())
+        self.set_output(page.get_output())
+
         self.write('<div id="{}" class="gamelisting" onclick="ShowGameDesc(this)">'.format(self._game.id()))
         defer_.push(lambda :self.write('</div> <!-- {} gamelisting -->'.format(self._game.id())))
         defer_.push(self.untab)
         self.tab()
 
-        self.insert_icon(fp)
-        self.insert_description(fp)
+        self.insert_icon()
+        self.insert_description()
 
         defer_.run()
 
-    def insert_icon(self, fp):
-        """Insert this component's icon into a page
-        
-        fp -- The output file
-        """
+    def insert_icon(self):
+        """Insert this component's icon into a page"""
         defer_ = Defer()
 
         self.write('<div id="{}-icon" class="gameicon" onmouseover="ShowGameDetails(this)" '
@@ -197,11 +195,8 @@ class GameWriter(BaseWriter):
 
         defer_.run()
 
-    def insert_description(self, fp):
-        """Insert this component's description
-        
-        fp -- The output file
-        """
+    def insert_description(self):
+        """Insert this component's description"""
         defer_ = Defer()
 
         self.write('<div id="{}-desc" class="gamedesc-hidden">'.format(self._game.id()))
@@ -209,15 +204,15 @@ class GameWriter(BaseWriter):
         defer_.push(self.untab)
         self.tab()
 
-        self.write_content('h1', self._game.title(), style='gamedesc')
+        self.write_content('h1', self._game.title(), style='content')
         if self._game.has_event():
-            self.write_content('h2', 'Made for {}'.format(self._game.event()), style='gamedesc')
+            self.write_content('h2', 'Made for {}'.format(self._game.event()), style='content')
         if self._game.was_released():
-            self.write_content('h3', 'Published: {}'.format(self._game.release_date()), style='gamedesc')
+            self.write_content('h3', 'Published: {}'.format(self._game.release_date()), style='content')
         else:
-            self.write_content('h3', 'Release Date: {}'.format(self._game.release_date()), style='gamedesc')
+            self.write_content('h3', 'Release Date: {}'.format(self._game.release_date()), style='content')
 
-        self.write_content('p', self._game.short_desc(), style='gamedesc')
+        self.write_content('p', self._game.short_desc(), style='content')
 
         self.insert_downloadlink()
 
