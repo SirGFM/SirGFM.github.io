@@ -16,7 +16,7 @@ class Page(PageWriter):
         self.write_content('p', 'Hello! I\'m Gabriel Francisco Mandaji (aka, GFM) a software ' +
                 'developer and hobbyist game developer.', style='content')
         self.write_content('p', 'I used to play around with RPG Maker and Flash (ActionScript 3 ' +
-                '+ Flixel), but nowaday, except for the ocasional Python script (like this site), ' +
+                '+ Flixel), but nowadays, except for the ocasional Python script (like this site), ' +
                 'most of my projects are written in C. Reinventing the wheel is fun and great for ' +
                 'learning!', style='content')
         self.write_content('p', 'Here you may find links and descriptions for most of the games ' +

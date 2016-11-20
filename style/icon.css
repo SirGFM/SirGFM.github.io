@@ -29,8 +29,6 @@ div.gamelisting {
 
 div.gameicon, div.gamedesc-visible {
     position: relative;
-    border-style: solid;
-    border-width: 1px;
     margin-left: 8px;
     margin-right: 8px;
     margin-bottom: 8px;
@@ -56,9 +54,11 @@ div.gamedesc-hidden {
 }
 
 div.gamedesc-visible {
+    border-style: solid;
+    border-width: 1px;
     max-width: 400px;
     padding-left: 2px;
-    padding-right: 2px;
+    padding-right: 8px;
     padding-bottom: 2px;
     padding-top: 2px;
 }
@@ -68,8 +68,6 @@ div.gameiconoverlay {
     top: 0;
     left: 0;
     visibility: hidden;
-    background-color: rgb(128, 128, 128);
-    background-color: rgba(128, 128, 128, 0.5);
     width: 132px;
     height: 132px;
     cursor: pointer;
@@ -77,6 +75,7 @@ div.gameiconoverlay {
 
 div.gameicontitle {
     color:#ffffff;
+    text-shadow: 0 0 2em #222034;
     text-align: center;
     cursor: inherit;
 }
