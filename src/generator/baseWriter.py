@@ -71,5 +71,26 @@ class BaseWriter(object):
         style -- CSS class to be used with the tag
         """
         self.write_content('p', '<a href="https://github.com/{}"> Check it out on Github </a>'.format(relative_link),
-                style='content')
+                style=style)
+
+    def write_image(self, image_link, position, style=None):
+        """Insert an image on the given relative position
+
+        image_link -- Path to the image
+        position -- Relative position of the image ('left', 'right', 'center')
+        style -- CSS class to be used with the tag
+        """
+        pos_style = ''
+
+        if position == 'left':
+            pos_style = 'style="float:left;"'
+        elif position == 'right':
+            pos_style = 'style="float:right;"'
+        elif position == 'center':
+            pos_style = 'style="margin-left: auto; margin-right: auto; display: block;"'
+
+        if style is not None:
+            self.write('<img class="{}" {} src="{}"> </img>'.format(style, pos_style, image_link))
+        else:
+            self.write('<img {} src="{}"> </img>'.format(pos_style, image_link))
 

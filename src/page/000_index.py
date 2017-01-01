@@ -13,6 +13,7 @@ class Page(PageWriter):
 
     def insert_content(self):
         """Insert the content of the page"""
+        self.write_image('/img/home/avatar.png', 'left', style='content nearest-neighbor')
         self.write_content('p', 'Hello! I\'m Gabriel Francisco Mandaji (aka, GFM) a software ' +
                 'developer and hobbyist game developer.', style='content')
         self.write_content('p', 'I used to play around with RPG Maker and Flash (ActionScript 3 ' +
