@@ -64,3 +64,12 @@ class BaseWriter(object):
         else:
             self.write('<{}> {} </{}>'.format(tag, string, tag))
 
+    def write_github_link(self, relative_link, style=None):
+        """Insert a simple link to a Github repository
+
+        relative_link -- The path to a repository within Github, e.g.: SirGFM/GFraMe
+        style -- CSS class to be used with the tag
+        """
+        self.write_content('p', '<a href="https://github.com/{}"> Check it out on Github </a>'.format(relative_link),
+                style='content')
+

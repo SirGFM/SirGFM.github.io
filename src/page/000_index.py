@@ -35,6 +35,7 @@ class Page(PageWriter):
                 'distinct role. "Swordy" can attack enemies, is quicker and has double jump. "Gunny"' +
                 'is way less agile but has a teleport gun, which actually switch the character and ' +
                 'the targeted entity.', style='content')
+        self.write_github_link('SirGFM/jjat_2', style='content')
 
         self.write_content('h2', 'GFraMe', style='content')
         self.write_content('p', 'My personal framework for making games. It\'s SDL2 based and has ' +
@@ -46,6 +47,7 @@ class Page(PageWriter):
                 'supporting older platforms (e.g.,  Mega Drive/Sega Genesis through ' +
                 '<a href="https://github.com/kubilus1/gendev" >GENDEV</a>). I don\'t know when ' +
                 'this new version will be started, though...', style='content')
+        self.write_github_link('SirGFM/GFraMe', style='content')
 
         self.write_content('h2', 'c_synth', style='content')
         self.write_content('p', 'Synthesizes MML-like songs into waveforms. It uses a custom language ' +
@@ -54,6 +56,7 @@ class Page(PageWriter):
                 'have proper documentantion, use a fixed amount of memory and synthesize songs on ' +
                 'runtime, allowing some effects to be applied to a song or to its tracks separately.',
                 style='content')
+        self.write_github_link('SirGFM/c_synth', style='content')
 
     def do_create(self):
         """Create the page, adding every require css/js"""
