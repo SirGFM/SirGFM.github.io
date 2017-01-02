@@ -1,0 +1,25 @@
+{
+    "id": "ld31",
+    "title": "Cold Remembrance",
+    "thumbnail": "ld31.png",
+    "image": "ld/ld31.png",
+    "release_date": "2014-12-07",
+    "event": "Ludum Dare",
+    "event_edition": "#31 (Compo)",
+    "event_theme": "Entire Game on One Screen",
+    "event_start_date": "2014-12-05",
+    "event_end_date": "2014-12-08",
+    "event_entry": "http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=7375",
+    "source_code": "https://github.com/SirGFM/ld31/releases",
+    "timelapse": "https://www.youtube.com/watch?v=GVxrYQSkpMc",
+    "distribution": {
+        "direct_link": {
+            "Windows": "https://github.com/SirGFM/ld31/releases/download/v1.0/cold_remembrance_win.zip",
+            "Linux": "https://github.com/SirGFM/ld31/releases/download/v1.0/cold_remembrance_linux.tar.gz",
+            "Android": "https://github.com/SirGFM/ld31/releases/download/v1.0/ColdRemembrance.apk"
+        }
+    },
+    "tools": ["SDL2", "GFraMe"],
+    "short_description": "Join a snowman in his journey to find someone important in this small experience.",
+    "description": ["Join a snowman in his journey to find someone important in this small experience."]
+}

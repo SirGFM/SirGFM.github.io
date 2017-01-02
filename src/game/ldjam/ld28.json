@@ -1,0 +1,27 @@
+{
+    "id": "ld28",
+    "title": "Two Options...",
+    "thumbnail": "ld28.png",
+    "image": "ld/ld28.png",
+    "release_date": "2016-12-15",
+    "event": "Ludum Date",
+    "event_edition": "#28 (Compo)",
+    "event_theme": "You Only Get One",
+    "event_start_date": "2016-12-13",
+    "event_end_date": "2016-12-16",
+    "event_entry": "http://ludumdare.com/compo/ludum-dare-28/?action=preview&uid=7375",
+    "source_code": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld28/compo/compoversion.rar",
+    "timelapse": "http://www.youtube.com/watch?v=z5T3drW2JZQ",
+    "distribution": {
+        "direct_link": {
+            "Flash (link possibly broken D:)": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld28/compo/GFMLD28.swf"
+        }
+    },
+    "tools": ["ActionScript 3", "Flixel"],
+    "short_description": "Prototype-y precision platformer (further developed later)",
+    "description": [
+        "While exploring a temple, you heard a call for help.",
+        "Do you have what it take to save them?",
+        "Can you really reach the best end?"
+    ]
+}

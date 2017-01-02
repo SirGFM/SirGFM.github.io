@@ -1,0 +1,26 @@
+{
+    "id": "ld30",
+    "title": "The Nether",
+    "thumbnail": "ld30.png",
+    "image": "ld/ld30.png",
+    "release_date": "2014-08-24",
+    "event": "Ludum Dare",
+    "event_edition": "#30 (Compo)",
+    "event_theme": "Connected Worlds",
+    "event_start_date": "2014-08-22",
+    "event_end_date": "2014-08-25",
+    "event_entry": "http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=7375",
+    "source_code": "https://github.com/SirGFM/ld30/",
+    "timelapse": "https://www.youtube.com/watch?v=WJwhozcfPMI",
+    "distribution": {
+        "direct_link": {
+            "Flash (link possibly broken D:)": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld30/compo/GFMLD30.swf"
+        }
+    },
+    "tools": ["ActionScript 3", "Flixel", "SiON"],
+    "short_description": "Broken 2D... strategy... platformer (maybe)",
+    "description": [
+        "There are three close worlds that are connected by an area void of life. That came to be called as \"Neutral area\", with the others being \"Dark World\", inhabited by Dark'ans; \"Light World\", inhabited by Light'ans; and \"The Nether\", were creatures lives.",
+        "Those that lives on The Nether don't usually cause harm by themselves. But when commanded, they can make into a fearsome force.",
+        "Lately, both worlds have been attacked, through the neutral area, by nether creatures. Since there has always been animosity between them and they are oblivious to the fact that both are being attacked, each is blaming the other one... "]
+}
