@@ -1,0 +1,24 @@
+{
+    "id": "ld32",
+    "title": "Kitten",
+    "thumbnail": "ld32.png",
+    "image": "ld/ld32.png",
+    "release_date": "2015-04-19",
+    "event": "Ludum Dare",
+    "event_edition": "#32 (Compo)",
+    "event_theme": "An Unconventional Weapon",
+    "event_start_date": "2015-04-17",
+    "event_end_date": "2015-04-20",
+    "event_entry": "http://ludumdare.com/compo/ludum-dare-32/?action=preview&uid=7375",
+    "source_code": "https://github.com/SirGFM/ld32/tree/v1.0",
+    "timelapse": "https://www.youtube.com/watch?v=qtiWxOmvz4o",
+    "distribution": {
+        "direct_link": {
+            "Windows": "https://github.com/SirGFM/ld32/releases/download/v1.0/kitten_win.zip",
+            "Linux": "https://github.com/SirGFM/ld32/archive/v1.0.tar.gz"
+        }
+    },
+    "tools": ["SDL2", "GFraMe v2"],
+    "short_description": "Collect the 7 stones and fly by shooting rainbows in this platformer.",
+    "description": ["Legends tell about 7 stones of power. If one were to obtain all 7, a great power would be granted unto that being."]
+}

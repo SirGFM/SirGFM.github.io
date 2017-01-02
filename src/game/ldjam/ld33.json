@@ -1,0 +1,24 @@
+{
+    "id": "ld33",
+    "title": "Hero's Quest",
+    "thumbnail": "ld33.png",
+    "image": "ld/ld33.png",
+    "release_date": "2015-08-23",
+    "event": "Ludum Dare",
+    "event_edition": "#33 (Compo)",
+    "event_theme": "You are the Monster",
+    "event_start_date": "2015-08-24",
+    "event_end_date": "2015-08-21",
+    "event_entry": "http://ludumdare.com/compo/ludum-dare-33/?action=preview&uid=7375",
+    "source_code": "https://github.com/SirGFM/ld33/tree/v1.0.0",
+    "timelapse": "https://www.youtube.com/watch?v=N5FUI-rxz1E",
+    "distribution": {
+        "direct_link": {
+            "Windows": "https://github.com/SirGFM/ld33/releases/download/v1.0.0/HerosQuest_win.zip",
+            "Linux": "https://github.com/SirGFM/ld33/releases/download/v1.0.0/HerosQuest_linux.tar.gz"
+        }
+    },
+    "tools": ["SDL2", "GFraMe v2"],
+    "short_description": "TODO",
+    "description": ["As the Hero of a village, you must follow the orders when you are told that there are menacing creatures on the forest..."]
+}
