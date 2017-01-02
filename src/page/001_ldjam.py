@@ -23,6 +23,8 @@ class Page(PageWriter):
             path = join('src/game/ldjam/', f)
             if not isfile(path):
                 continue
+            elif not path.endswith('.json'):
+                continue
             GameWriter(path).insert(self)
 
     def do_create(self):

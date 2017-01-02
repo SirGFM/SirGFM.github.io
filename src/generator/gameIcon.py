@@ -110,7 +110,11 @@ class GameWriter(BaseWriter):
         json_file -- Name of the JSON file for the game
         """
         super(GameWriter, self).__init__()
-        self._game = Game(json_file)
+        try:
+            self._game = Game(json_file)
+        except Exception:
+            print "Failed to parse {}".format(json_file)
+            raise
 
     def set_game(self, game):
         """Set the writer's game
