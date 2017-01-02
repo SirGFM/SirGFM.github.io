@@ -1,0 +1,26 @@
+{
+    "id": "ld35",
+    "title": "A Simple Tale",
+    "thumbnail": "ld35.png",
+    "image": "ld/ld35.png",
+    "release_date": "2016-04-17",
+    "event": "Ludum Dare",
+    "event_edition": "#35 (compo)",
+    "event_theme": "Shapeshift",
+    "event_start_date": "2016-04-15",
+    "event_end_date": "2016-04-18",
+    "event_entry": "http://ludumdare.com/compo/ludum-dare-35/?action=preview&uid=7375",
+    "source_code": "https://github.com/SirGFM/ld35/tree/v1.0.0",
+    "timelapse": "https://www.youtube.com/watch?v=ZHn68zmfUuQ",
+    "distribution": {
+        "direct_link": {
+            "Windows": "https://github.com/SirGFM/ld35/releases/download/v1.0.0/a_simple_tale_win.zip",
+            "Linux": "https://github.com/SirGFM/ld35/releases/download/v1.0.0/a_simple_tale_linux.tar.gz"
+        }
+    },
+    "tools": ["SDL2", "GFraMe v2"],
+    "short_description": "Story driven prototype based on 'The Beauty and the Beast' fairy tale",
+    "description": [
+        "This game is about a simple tale.",
+        "You've probably already heard something similar to it..."]
+}

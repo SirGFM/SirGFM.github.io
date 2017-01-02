@@ -1,0 +1,27 @@
+{
+    "id": "ld34",
+    "title": "MK-F417XX3",
+    "thumbnail": "ld34.png",
+    "image": "ld/ld34.png",
+    "release_date": "2015-12-13",
+    "event": "Ludum Dare",
+    "event_edition": "#34 (compo)",
+    "event_theme": "Two Button Controls, Growing",
+    "event_start_date": "2015-12-11",
+    "event_end_date": "2015-12-14",
+    "event_entry": "http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=7375",
+    "source_code": "https://github.com/SirGFM/ld34/tree/v1.0.0",
+    "timelapse": "https://youtu.be/7zYXDl92vx4",
+    "distribution": {
+        "direct_link": {
+            "Windows": "https://github.com/SirGFM/ld34/releases/download/v1.0.0/MK_F417XX3_win.zip",
+            "Linux": "https://github.com/SirGFM/ld34/releases/download/v1.0.0/MK_F417XX3_linux.tar.gz"
+        }
+    },
+    "tools": ["SDL2", "GFraMe v2"],
+    "short_description": "Short prototype about moving an invulnerable robot by moving its feet separately.",
+    "description": [
+        "Alien menace has been growing, quite literally. Now they are planning to use gigantic aliens on their attacks.",
+        "It' up to Earth's two best mecha pilots to face it. Call a friend, synchronize your movements and move toward victory!",
+        "Also, be sure the listen to what the commander has to say, in case things go wrong."]
+}

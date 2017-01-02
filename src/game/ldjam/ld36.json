@@ -2,7 +2,7 @@
     "id": "ld36",
     "title": "Burning Light",
     "thumbnail": "ld36.png",
-    "image": "ld36.png",
+    "image": "ld/ld36.png",
     "release_date": "2016-08-28",
     "event": "Ludum Dare",
     "event_edition": "#36 (compo)",
@@ -14,12 +14,12 @@
     "timelapse": "https://www.youtube.com/watch?v=bUc21jlEE8s",
     "distribution": {
         "direct_link": {
-            "Windows": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld36/burning_light.zip",
-            "Linux": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld36/burning_light.tar.gz"
+            "Windows": "https://github.com/SirGFM/ld36/releases/download/v1.0.0/burning_light_win.zip",
+            "Linux": "https://github.com/SirGFM/ld36/releases/download/v1.0.0/burning_light_linux.tar.gz"
         }
     },
     "tools": ["SDL2", "GFraMe v2"],
-    "short_description": "TODO",
+    "short_description": "Short prototype about refracting light through magical lens to light flammable stuff.",
     "description": [
         "On a distant land, an explorer found a set of mystical lenses. Any ray of light that passes through it gets perfectly focused into a single direction, sometimes seemingly defying physics. Also, any ray that passes through it becomes able to light flammable materials.",
         "On that same land, the explorer found some small shrines that resembles torches and perhaps could be lit... "]

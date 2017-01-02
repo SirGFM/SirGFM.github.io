@@ -1,0 +1,26 @@
+{
+    "id": "",
+    "title": "",
+    "thumbnail": "",
+    "image": "",
+    "release_date": "",
+    "event": "",
+    "event_edition": "",
+    "event_theme": "",
+    "event_start_date": "",
+    "event_end_date": "",
+    "event_entry": "",
+    "source_code": "",
+    "timelapse": "",
+    "distribution": {
+        "direct_link": {
+            "Windows": "",
+            "Linux": ""
+        }
+    },
+    "tools": ["SDL2", "GFraMe v2"],
+    "short_description": "TODO",
+    "description": [
+        "",
+        ""]
+}
