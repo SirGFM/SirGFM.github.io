@@ -225,6 +225,47 @@ function SetGameDescription(ctx) {
                 }
                 child.innerHTML = desc
             } break;
+            case 'detail-download-title': {
+                if (!dataObj.distribution || dataObj.distribution.length == 0) {
+                    child.style.visibility = 'hidden'
+                    child.innerHTML = ''
+                    continue
+                }
+
+                if (dataObj.distribution.length > 1) {
+                    child.innerHTML = 'Downloads'
+                }
+                else if (dataObj.distribution[0].mode == 'web') {
+                    child.innerHTML = 'Web Game'
+                }
+                else {
+                    child.innerHTML = 'Download'
+                }
+                child.style.visibility = 'visible'
+            } break;
+            case 'detail-download': {
+                if (!dataObj.distribution || dataObj.distribution.length == 0) {
+                    child.style.visibility = 'hidden'
+                    child.innerHTML = ''
+                    continue
+                }
+
+                var j
+                var list = '<ul>\n'
+                for (j = 0; j < dataObj.distribution.length; j++) {
+                    obj = dataObj.distribution[j]
+
+                    if (obj.mode == 'web') {
+                        list += _CreateListItem('', '<a href="' + obj.link + '">Play directly in your browser</a>')
+                    }
+                    else {
+                        list += _CreateListItem('', '<a href="' + obj.link + '">Download for <strong>' + obj.mode + '</strong></a>')
+                    }
+                }
+                list += '</ul>\n'
+                child.innerHTML = list
+                child.style.visibility = 'visible'
+            } break;
         }
     }
 }
