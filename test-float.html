@@ -12,10 +12,65 @@
         <link rel="stylesheet" type="text/css" href="/style/game_description.css" />
         <script type="text/javascript" src="/script/mouseover.js"></script>
         <script type="text/javascript" src="/script/game_description.js"></script>
+
+        <script type="application/json" id="ld27-json">
+            {
+                "id": "ld27",
+                "title": "IT WORKS",
+                "thumbnail": "ld27.png",
+                "image": "ld/ld27.png",
+                "release_date": "2013-08-25",
+                "event": {
+                    "title": "Ludum Dare",
+                    "edition": "#27 (Compo)",
+                    "theme": "10 Seconds",
+                    "start_date": "2013-08-23",
+                    "end_date": "2013-08-26",
+                    "page": "http://ludumdare.com/compo/ludum-dare-27/?action=preview&uid=7375",
+                    "source": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld27/gfm_ld27.rar",
+                    "timelapse": "http://www.youtube.com/watch?v=R9rWHKDfbgY"
+                },
+                "distribution": {
+                    "direct_link": {
+                        "Flash (link possibly broken D:)": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld27/GFMLD27.swf"
+                    }
+                },
+                "tools": ["ActionScript 3", "Flixel"],
+                "short_description": "Space shmup",
+                "description": [
+                    "Be careful!",
+                    "Something happened and rifts are opening in space.",
+                    "What's worse, aliens are coming from inside those breaches and are wrecking havoc!",
+                    "Go forth and defeat 'em!"
+                ]
+            }
+        </script>
     </head>
     <body>
         <div id="floating-game-detail" class="game_description">
-            <p> ohai! </p>
+            <h1 id="detail-title" class="game_description"> Space Rift </h1>
+            <h2 id="detail-jam-title" class="game_description"> Jam Details </h2>
+            <div id="detail-jam-content" class="game_description_content">
+                <ul>
+                    <li>Made for: Ludum Dare #27 (compo)</li>
+                    <li>Theme: 10 Seconds</li>
+                    <li>Timelapse: asdasdasd</li>
+                    <li>Source Code: asasdasd</li>
+                    <li>Entry page: asdasdasd</li>
+                </ul>
+            </div>
+            <h2 id="detail-about-title" class="game_description"> About </h2>
+            <div id="detail-about" class="game_description_content">
+                <p> Published: 2013-08-25 </p>
+                <p> Space sh'm'up. Waves of enemies come every 10 seconds, and the boss also change forms every 10 seconds.</p>
+            </div>
+            <h2 id="detail-download-title" class="game_description"> Download(s) </h2>
+            <div id="detail-download" class="game_description_content">
+                <ul>
+                    <li>Windows: asdasdasd</li>
+                    <li>Linux: asdasdasd</li>
+                </ul>
+            </div>
         </div> <!-- float-game-detail -->
         <div id="page-header" class="header">
             <a class="header" href="/">
@@ -36,7 +91,7 @@
         </div> <!-- sidebar -->
         <div id="page-content" class="content">
             <p class="content"> Here you'll find every game I've made for <a href="http://www.ludumdare.com/" >Ludum Dare</a>, a 48h-72h game jam. </p>
-            <div id="ld27" class="gamelisting" onclick="ToggleGameDescriptionVisibility()">
+            <div id="ld27" class="gamelisting" onclick="SetGameDescription(this); ToggleGameDescriptionVisibility()">
                 <div id="ld27-icon" class="gameicon" onmouseover="ShowGameDetails(this)" onmouseout="HideGameDetails(this)" style="background-image:url('/img/game/icon/ld/ld27.png')">
                     <div id="ld27-overlay" class="gameiconoverlay">
                         <div id="ld27-inner-title" class="gameicontitle noselect" >

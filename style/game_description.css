@@ -11,6 +11,7 @@ div.game_description {
     position: absolute;
     z-index: 100;
     visibility: hidden;
+    max-width: 320px;
     /* Make the visible borders round */
     border-style: solid;
     border-left-style: none;
@@ -19,7 +20,59 @@ div.game_description {
     /* Color the border so it looks like it's beveled */
     border-top-color: #639bff;
     border-right-color: #639bff;
-    border-bottom-color: #3f3f74;
-    background-color: #5b6ee1;
+    border-bottom-color: #5b6ee1;
+    background-color: #3f3f74;
+}
+
+h1.game_description {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    /* Round the right edge */
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    /* Distance the title (as a whole) slightly from the DIV, and also distance
+     * the title from the inner border */
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: #222034;
+    margin-right: 0.2em;
+    /* Set the text color */
+    color: #cbdbfc;
+    font-size: 2em;
+}
+
+h2.game_description {
+    margin-top: 0.375em;
+    margin-bottom: 0;
+    /* Round the right edge */
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    /* Distance the title (as a whole) slightly from the DIV, and also distance
+     * the title from the inner border */
+    padding-left: 0.9em;
+    padding-right: 1em;
+    background-color: #222034;
+    margin-right: 0.2em;
+    /* Set the text color */
+    color: #cbdbfc;
+    font-size: 1.25em;
+}
+
+div.game_description_content {
+    margin-top: 0.25em;
+    margin-bottom: 0;
+    /* Round the right edge */
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: table;
+    position: relative;
+    /* Position the content within a nice border */
+    padding-left: 0.25em;
+    padding-right: 0.75em;
+    background-color: #222034;
+    margin-right: 0.2em;
+    /* Set the text color */
+    color: #cbdbfc;
+    font-size: 1em;
 }
 

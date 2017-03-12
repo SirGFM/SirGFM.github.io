@@ -24,7 +24,7 @@ function _PrepareGameDescription() {
     }
 
     if (_overlay.clientHeight < window.innerHeight) {
-        pos = window.innerHeight - _overlay.clientHeight
+        var pos = window.innerHeight - _overlay.clientHeight
         pos /= 2
         pos += window.pageYOffset || document.documentElement.scrollTop
 
@@ -46,10 +46,11 @@ var _params = {
         frameTime: 16,
         curAnim: -1}
 
+/** Play the animation described in '_params' until its completion */
 function _PlayAnimation() {
     _params.curTime += _params.frameTime
-    perc = _params.curTime / _params.animTime
-    pos = _params.src * (1 - perc) + _params.dst * perc
+    var perc = _params.curTime / _params.animTime
+    var pos = _params.src * (1 - perc) + _params.dst * perc
     _overlay.style.left = pos+'px'
 
     if (_params.curTime < _params.animTime) {
@@ -66,18 +67,23 @@ function _PlayAnimation() {
     }
 }
 
+/**
+ * Setup '_params' and start the BG job for the animation
+ *
+ * @param  [ in]dir  Either _left or _right (direction of the movement)
+ * @param  [ in]dest Position of the overlay after the animation
+ */
 function _StartAnimation(dir, dest) {
     _PrepareGameDescription()
 
     /* Initialize the animation's parameters */
     if (dir == _right) {
         _params.src = -_overlay.clientWidth - 32
-        _params.dst = 0
     }
     else if (dir == _left) {
         _params.src = 0
-        _params.dst = -_overlay.clientWidth - 32
     }
+    _params.dst = dest
     _params.dir = dir
     _params.animTime = _animTime
     _params.frameTime = _frameTime
@@ -99,8 +105,121 @@ function _StartAnimation(dir, dest) {
     _PlayAnimation()
 }
 
-function SetGameDescription() {
+/**
+ * Set the title of an event (within the overlay)
+ *
+ * @param  [ in]ctx   The title element
+ * @param  [ in]event The event object
+ */
+function _SetEventTitle(ctx, event) {
+    switch (event.title) {
+        case 'Ludum Dare': {
+            ctx.innerHTML = 'Ludum Dare Entry Details'
+        } break;
+    }
+}
+
+function _CreateListItem(title, content) {
+    var ret = '<li>'
+    if (title) {
+        ret += ' <strong>' + title + ':</strong>'
+    }
+    ret += content
+    ret += '</li>\n'
+    return ret
+}
+
+/**
+ * Set the content of an event (within the overlay)
+ *
+ * @param  [ in]ctx   The content element
+ * @param  [ in]event The event object
+ */
+function _SetEventContent(ctx, event) {
+    switch (event.title) {
+        case 'Ludum Dare': {
+            var list = '<ul>\n'
+            list += _CreateListItem('Made for', event.title + ' ' + event.edition)
+            list += _CreateListItem('Theme', event.theme)
+            list += _CreateListItem('', '<a href="' + event.page + '">Entry page</a>')
+            list += _CreateListItem('', '<a href="' + event.source + '">Source code</a>')
+            list += _CreateListItem('', '<a href="' + event.timelapse + '">Timelapse</a>')
+            list += '</ul>\n'
+            ctx.innerHTML = list
+        } break;
+    }
+}
+
+/**
+ * Fill the overlay with the desired game data
+ *
+ * @param  [ in]ctx The object that called this function
+ */
+function SetGameDescription(ctx) {
     _PrepareGameDescription()
+
+    var name = ctx.getAttribute('id')
+    var jsonText = document.getElementById(name+'-json').innerText
+    if (!jsonText) {
+        /* TODO Print error */
+        return
+    }
+    var dataObj = JSON.parse(jsonText)
+    if (!dataObj) {
+        /* TODO Print error */
+        return
+    }
+
+    var i
+    for (i = 0; i < _overlay.childNodes.length; i++) {
+        var child = _overlay.childNodes[i]
+        if (child.getAttribute == null) {
+            continue
+        }
+
+        switch (child.id) {
+            case 'detail-title': {
+                if (!dataObj.title) {
+                    /* TODO Print error */
+                    continue
+                }
+                child.innerHTML = dataObj.title
+            } break;
+            case 'detail-jam-title': {
+                if (!dataObj.event) {
+                    child.style.visibility = 'hidden'
+                    child.innerHTML = ''
+                    continue
+                }
+
+                child.style.visibility = 'visible'
+                _SetEventTitle(child, dataObj.event)
+            } break;
+            case 'detail-jam-content': {
+                if (!dataObj.event) {
+                    child.style.visibility = 'hidden'
+                    child.innerHTML = ''
+                    continue
+                }
+
+                child.style.visibility = 'visible'
+                _SetEventContent(child, dataObj.event)
+            } break;
+            case 'detail-about-title': {
+                /* Does nothing */
+            } break;
+            case 'detail-about': {
+                var desc = ''
+                var j
+                for (j = 0; j < dataObj.description.length; j++) {
+                    desc += '<p>'
+                    desc += dataObj.description[j]
+                    desc += '</p>'
+                }
+                child.innerHTML = desc
+            } break;
+        }
+    }
 }
 
 function ShowGameDescription() {
@@ -113,7 +232,7 @@ function ShowGameDescription() {
 function HideGameDescription() {
     _PrepareGameDescription()
 
-    _StartAnimation(_left, -_overlay.clientWidth)
+    _StartAnimation(_left, -_overlay.clientWidth - 32)
     _isVisible = false
 }
 
