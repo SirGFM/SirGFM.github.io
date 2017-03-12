@@ -1,0 +1,25 @@
+/**
+ * @file style/game_description.css
+ *
+ * Define styling common to all pages (e.g., the sidebar)
+ */
+
+/** Floating (i.e., in front of all other content) block with the current game
+ * description */
+div.game_description {
+    /* Position must be absolute so it may be scrolled-in with javascript */
+    position: absolute;
+    z-index: 100;
+    visibility: hidden;
+    /* Make the visible borders round */
+    border-style: solid;
+    border-left-style: none;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    /* Color the border so it looks like it's beveled */
+    border-top-color: #639bff;
+    border-right-color: #639bff;
+    border-bottom-color: #3f3f74;
+    background-color: #5b6ee1;
+}
+
