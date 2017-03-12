@@ -4,6 +4,28 @@
  * Define styling common to all pages (e.g., the sidebar)
  */
 
+p.close_game_description {
+    color: #cbdbfc;
+    font-size: 1.5em;
+
+    margin: 0.25em;
+    padding: 0.25em;
+
+    display: table;
+    position: relative;
+
+    /* Make the visible borders round */
+    border-style: solid;
+    /* Color the border so it looks like it's beveled */
+    border-top-color: #5b6ee1;
+    border-right-color: #5b6ee1;
+    border-bottom-color: #cbdbfc;
+    border-left-color: #cbdbfc;
+    background-color: #639bff;
+    /* 'overflow' is set as required, from the javascript */
+    cursor: pointer;
+}
+
 /** Floating (i.e., in front of all other content) block with the current game
  * description */
 div.game_description {
