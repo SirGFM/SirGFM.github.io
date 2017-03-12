@@ -2,6 +2,7 @@
 from generator import const
 from generator.baseWriter import BaseWriter
 from generator.defer import Defer
+from os import path
 
 class PageWriter(BaseWriter):
     """Writer for a complete page
@@ -32,29 +33,31 @@ class PageWriter(BaseWriter):
         """Overwrite this function on sub-classes to create new pages"""
         return
 
-    def create(self, style_list=['page.css'], script_list=[]):
+    def create(self, style_list=['page.css'], script_list=[], json_list=[]):
         """Creates the HTML described by its sub-class
 
         style_list -- List of style (*.css) files to be included in this page
         script_list -- List of scripts (*.js) to be included in this page
+        json_list -- List of JSON files(*.json) to be included as a script. Its id shall be set to 'filename-json'.
         """
         self.set_output(open(self._out, 'wt'))
         self.write('<!DOCTYPE html>')
         self.write('<html lang="en">')
         self.tab()
 
-        self._insert_head(style_list, script_list)
+        self._insert_head(style_list, script_list, json_list)
         self._insert_body()
 
         self.untab()
         self.write('</html>')
         self.close_output()
 
-    def _insert_head(self, style_list=['page.css'], script_list=[]):
+    def _insert_head(self, style_list=['page.css'], script_list=[], json_list=[]):
         """Inserts the page's <head>, which should be common to all pages
 
         style_list -- List of style (*.css) files to be included in this page
         script_list -- List of scripts (*.js) to be included in this page
+        json_list -- List of JSON files(*.json) to be included as a script. Its id shall be set to 'filename-json'.
         """
         defer_ = Defer()
 
@@ -74,6 +77,14 @@ class PageWriter(BaseWriter):
             self.write('<link rel="stylesheet" type="text/css" href="/style/{}" />'.format(style))
         for script in script_list:
             self.write('<script type="text/javascript" src="/script/{}"></script>'.format(script))
+        for jfile in json_list:
+            filename = path.basename(jfile)
+            filename = filename.replace('.json', '')
+            self.write('<script type="application/json" id="{}-json">'.format(filename))
+            with open(jfile, 'rt') as f:
+                for line in f:
+                    self.write(line, do_break=False)
+            self.write('</script>')
 
         defer_.run()
 
