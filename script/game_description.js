@@ -23,15 +23,22 @@ function _PrepareGameDescription() {
         _overlay = document.getElementById('floating-game-detail')
     }
 
+    var windowHeight = window.innerHeight
+    var yPosition = window.pageYOffset || document.documentElement.scrollTop
+
     if (_overlay.clientHeight < window.innerHeight) {
-        var pos = window.innerHeight - _overlay.clientHeight
+        var pos = windowHeight - _overlay.clientHeight
         pos /= 2
-        pos += window.pageYOffset || document.documentElement.scrollTop
+        pos += yPosition
 
         _overlay.style.top = pos+'px'
+        _overlay.style.height = ''
+        _overlay.style.overflow = 'visible'
     }
     else {
-        /* TODO Do something if it's bigger than the screen? */
+        _overlay.style.top = yPosition+'px'
+        _overlay.style.height = windowHeight+'px'
+        _overlay.style.overflow = 'auto'
     }
 }
 
@@ -246,3 +253,18 @@ function ToggleGameDescriptionVisibility() {
         ShowGameDescription()
     }
 }
+
+/* Setup a event for scrolling, so the overlay is always centered */
+var _defaultScroll = document.onscroll
+document.onscroll = function() {
+    /* Center the overlay whenever the screen scrolls */
+    if (_isVisible) {
+        _PrepareGameDescription()
+    }
+
+    /* Call any previous event handler */
+    if (_defaultScroll) {
+        _defaultScroll()
+    }
+}
+
