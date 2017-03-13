@@ -1,0 +1,36 @@
+{
+    "id": "ld22",
+    "title": "Loneliness",
+    "image": "ld/ld22.png",
+    "release_date": "2011-12-18",
+    "event": {
+        "title": "Ludum Dare",
+        "edition": "#22 (Compo)",
+        "theme": "Alone",
+        "start_date": "2011-12-16",
+        "end_date": "2011-12-19",
+        "page": "http://ludumdare.com/compo/ludum-dare-22/?action=preview&uid=7375",
+        "source": "https://github.com/SirGFM/ld22/tree/ludumdare_compo"
+    },
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "https://github.com/SirGFM/ld27/releases/download/v1.0.0/GFMLD27.swf",
+            "technology": "flash",
+            "width": "500",
+            "height": "500",
+            "how_to_play": [
+                "The player moves toward the mouse",
+                "Touch floating balls to befriend them",
+                "Befriended balls fly toward the player",
+                "The (broken) bar at the top represents the player's loneliness. If it get to 0, the game ends",
+                "Touching a red kitten makes all balls fly away and shortens the loneliness bar"
+            ]
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "Experimental little something. The game was intended to change colors as your character got more or less lonely.",
+        "You are a lonely kitten. Touch colored balls to befriend them and lessen your loneliness. Just beware the evil kittens."
+    ]
+}

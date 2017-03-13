@@ -1,0 +1,31 @@
+{
+    "id": "ld37",
+    "title": "Flipper",
+    "image": "ld/ld37.png",
+    "release_date": "2016-12-10",
+    "event": {
+        "title": "Ludum Dare",
+        "edition": "#37 (compo)",
+        "theme": "One Room",
+        "start_date": "2016-12-09",
+        "end_date": "2016-12-11",
+        "page": "http://ludumdare.com/compo/ludum-dare-37/?action=preview&uid=7375",
+        "source": "https://github.com/SirGFM/ld37/tree/ludumdare_compo",
+        "timelapse": "https://youtu.be/PVUfpM1zoG0"
+    },
+    "distribution": [
+        {
+            "platform": "Windows",
+            "link": "https://github.com/SirGFM/ld37/releases/download/v1.0.1/flipper_win.zip"
+        },
+        {
+            "platform": "Linux",
+            "link": "https://github.com/SirGFM/ld37/releases/download/v1.0.0/flipper_linux.tar.gz"
+        }
+    ],
+    "tools": ["SDL2", "GFraMe v2"],
+    "description": [
+        "Platformer slightly based on \"Umihara Kawase\". Use your grappling hook to climb walls and fling yourself through space.",
+        "Although the base movement is quite slow, it's possible (but tricky) to move faster by flinging. Also, beware that collision detection is ocassionaly buggy..."
+    ]
+}

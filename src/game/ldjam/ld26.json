@@ -1,0 +1,33 @@
+{
+    "id": "ld26",
+    "title": "NoBility",
+    "image": "ld/ld26.png",
+    "release_date": "2013-04-28",
+    "event": {
+        "title": "Ludum Dare",
+        "edition": "#26 (Compo)",
+        "theme": "Minimalism",
+        "start_date": "2013-04-26",
+        "end_date": "2013-04-29",
+        "page": "http://ludumdare.com/compo/ludum-dare-26/?action=preview&uid=7375",
+        "source": "https://github.com/SirGFM/ld26/tree/ludumdare_compo",
+        "timelapse": "http://www.youtube.com/watch?v=FgrqQ19xVTc"
+    },
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "https://github.com/SirGFM/ld27/releases/download/v1.0.0/GFMLD27.swf",
+            "technology": "flash",
+            "width": "500",
+            "height": "500",
+            "how_to_play": [
+                "Move with arrow keys",
+                "Press X to jump (if you have the jump ability)"
+            ]
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "Puzzle/platformer with a gimmick: you can only have one ability at a time"
+    ]
+}

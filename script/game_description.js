@@ -150,7 +150,9 @@ function _SetEventContent(ctx, event) {
             list += _CreateListItem('Theme', event.theme)
             list += _CreateListItem('', '<a href="' + event.page + '">Entry page</a>')
             list += _CreateListItem('', '<a href="' + event.source + '">Source code</a>')
-            list += _CreateListItem('', '<a href="' + event.timelapse + '">Timelapse</a>')
+            if (event.timelapse) {
+                list += _CreateListItem('', '<a href="' + event.timelapse + '">Timelapse</a>')
+            }
             list += '</ul>\n'
             ctx.innerHTML = list
         } break;
@@ -213,7 +215,7 @@ function SetGameDescription(ctx) {
                 _SetEventContent(child, dataObj.event)
             } break;
             case 'detail-about-title': {
-                /* Does nothing */
+                child.innerHTML = 'About'
             } break;
             case 'detail-about': {
                 var desc = ''
@@ -235,7 +237,7 @@ function SetGameDescription(ctx) {
                 if (dataObj.distribution.length > 1) {
                     child.innerHTML = 'Downloads'
                 }
-                else if (dataObj.distribution[0].mode == 'web') {
+                else if (dataObj.distribution[0].platform == 'web') {
                     child.innerHTML = 'Web Game'
                 }
                 else {
@@ -255,11 +257,11 @@ function SetGameDescription(ctx) {
                 for (j = 0; j < dataObj.distribution.length; j++) {
                     obj = dataObj.distribution[j]
 
-                    if (obj.mode == 'web') {
+                    if (obj.platform == 'web') {
                         list += _CreateListItem('', '<a href="' + obj.link + '">Play directly in your browser</a>')
                     }
                     else {
-                        list += _CreateListItem('', '<a href="' + obj.link + '">Download for <strong>' + obj.mode + '</strong></a>')
+                        list += _CreateListItem('', '<a href="' + obj.link + '">Download for <strong>' + obj.platform + '</strong></a>')
                     }
                 }
                 list += '</ul>\n'

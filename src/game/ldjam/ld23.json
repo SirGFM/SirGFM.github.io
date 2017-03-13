@@ -1,0 +1,35 @@
+{
+    "id": "ld23",
+    "title": "Hummy's Hunger",
+    "image": "ld/ld23.png",
+    "release_date": "2012-04-22",
+    "event": {
+        "title": "Ludum Dare",
+        "edition": "#23 (Compo)",
+        "theme": "Tiny World",
+        "start_date": "2012-04-20",
+        "end_date": "2012-04-23",
+        "page": "http://ludumdare.com/compo/ludum-dare-23/?action=preview&uid=7375",
+        "source": "https://github.com/SirGFM/ld23/tree/ludumdare_compo"
+    },
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "https://github.com/SirGFM/ld27/releases/download/v1.0.0/GFMLD27.swf",
+            "technology": "flash",
+            "width": "500",
+            "height": "500",
+            "how_to_play": [
+                "Move Hummy with the arrow keys",
+                "Press spacebar, while <strong>stopped</strong>, to eat things",
+                "You can only eat things smaller than you",
+                "Jumping on things make them shrink"
+            ]
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "Tiny platformer. Feed the tiny creature so it may grow bigger.",
+        "The point was to make the creature grow so big that the world would be comparatively tiny and the creature would be able to eat it... But time got in the way."
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "id": "ld25",
+    "title": "Save the pricess",
+    "image": "ld/ld25.png",
+    "release_date": "2012-12-16",
+    "event": {
+        "title": "Ludum Dare",
+        "edition": "#25 (Compo)",
+        "theme": "You are the Villain",
+        "start_date": "2012-12-14",
+        "end_date": "2012-12-17",
+        "page": "http://ludumdare.com/compo/ludum-dare-25/?action=preview&uid=7375",
+        "source": "https://github.com/SirGFM/ld25/tree/ludumdare_compo"
+    },
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "https://github.com/SirGFM/ld27/releases/download/v1.0.0/GFMLD27.swf",
+            "technology": "flash",
+            "width": "500",
+            "height": "500",
+            "how_to_play": [
+                "Move with arrow keys",
+                "Press X and C to attack",
+                "Click on a weapon's icon to switch it",
+                "There are multiple endings..."
+            ]
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "Action game about an evil king kidnapping a princess and her knight saving her...",
+        "Or is it?"
+    ]
+}

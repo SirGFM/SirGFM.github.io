@@ -1,0 +1,38 @@
+{
+    "id": "ld24",
+    "title": "EVO-X",
+    "image": "ld/ld24.png",
+    "release_date": "2012-08-26",
+    "event": {
+        "title": "Ludum Dare",
+        "edition": "#24 (Compo)",
+        "theme": "Evolution",
+        "start_date": "2012-08-24",
+        "end_date": "2012-08-27",
+        "page": "http://ludumdare.com/compo/ludum-dare-24/?action=preview&uid=7375",
+        "source": "https://github.com/SirGFM/ld24/tree/ludumdare_compo"
+    },
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "https://github.com/SirGFM/ld27/releases/download/v1.0.0/GFMLD27.swf",
+            "technology": "flash",
+            "width": "500",
+            "height": "500",
+            "how_to_play": [
+                "Move with arrow keys",
+                "Press X to attack",
+                "Press the up key to Jump (when enabled)",
+                "Press C to run (when enabled)",
+                "Press K to open the stats screen",
+                "Enemies may be hurt by attacking them and jumping on them",
+                "There are no checkpoints because of a dumb bug :("
+            ]
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "Game highly inspired by \"E.V.O.: Search for Eden\".",
+        "Eat creatures to evolve and learn their abilities."
+    ]
+}
