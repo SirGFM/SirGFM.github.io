@@ -16,7 +16,13 @@
     "distribution": [
         {
             "platform": "web",
-            "link": "..."
+            "link": "/webgames/..."
+            "technology": "flash",
+            "width": "500",
+            "height": "500",
+            "how_to_play": [
+                "..."
+            ]
         },
         {
             "platform": "windows",
@@ -26,5 +32,5 @@
     "tools": ["SDL2", "GFraMe v2"],
     "description": [
         "",
-        ""]
+    ]
 }
