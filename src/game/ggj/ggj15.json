@@ -1,0 +1,30 @@
+{
+    "id": "ggj15",
+    "title": "GFM's GGJ15 entry",
+    "image": "ggj/ggj15.png",
+    "release_date": "2015-01-25",
+    "event": {
+        "title": "Global Game Jam",
+        "edition": "2015",
+        "theme": "What do we do now?",
+        "start_date": "2015-01-24",
+        "end_date": "2015-01-25",
+        "page": "http://globalgamejam.org/2015/games/gfms-ggj15-entry",
+        "source": "https://github.com/SirGFM/ggj15"
+    },
+    "distribution": [
+        {
+            "platform": "Windows",
+            "link": "https://github.com/SirGFM/ggj15/releases/download/v1.0.0/ggj15-win.zip"
+        },
+        {
+            "platform": "Linux",
+            "link": "https://github.com/SirGFM/ggj15/releases/download/v1.0.0/ggj15-linux.tgz"
+        }
+    ],
+    "tools": ["SDL2", "GFraMe"],
+    "description": [
+        "Platformer with no explanations whatsoever. You must find out what the game is about by yourself",
+        "WARNING: Depending on user input, the game may flash images quickly (<strong>EPILEPSY WARNING</strong>) and make loud noises!"
+    ]
+}

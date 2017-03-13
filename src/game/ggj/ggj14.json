@@ -1,0 +1,36 @@
+{
+    "id": "ggj14",
+    "title": "True Sight",
+    "image": "ggj/ggj14.png",
+    "release_date": "2014-01-26",
+    "event": {
+        "title": "Global Game Jam",
+        "edition": "2014",
+        "theme": "We don't see things as they are, we see them as we are",
+        "start_date": "2014-01-25",
+        "end_date": "2014-01-26",
+        "page": "http://globalgamejam.org/2014/games/true-sight",
+        "source": "https://github.com/SirGFM/ggj14/tree/v1.0.0",
+        "timelapse": "https://www.youtube.com/watch?v=N2C57sKA37w"
+    },
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "/webgames/ggj14/ggj14.html",
+            "technology": "flash",
+            "width": "640",
+            "height": "512",
+            "how_to_play": [
+                "Move with arrow keys or WASD",
+                "After finding the shades, you mustn't stop",
+                "Also, don't look at advertsings when they change (usually you have to look outside the screen, by pressing left)",
+                "There's no ending, it's about a score based game"
+            ]
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "Experimental thing about seeing... the truth... behind stuff... kinda...",
+        "The game is somewhat playable, but it's really unfinished. It was my first time taking part of a jam with a team and it didn't work out too well..."
+    ]
+}
