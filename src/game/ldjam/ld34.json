@@ -1,7 +1,6 @@
 {
     "id": "ld34",
     "title": "MK-F417XX3",
-    "thumbnail": "ld34.png",
     "image": "ld/ld34.png",
     "release_date": "2015-12-13",
     "event": {
@@ -25,7 +24,6 @@
         }
     ],
     "tools": ["SDL2", "GFraMe v2"],
-    "short_description": "Short prototype about moving an invulnerable robot by moving its feet separately.",
     "description": [
         "Alien menace has been growing, quite literally. Now they are planning to use gigantic aliens on their attacks.",
         "It' up to Earth's two best mecha pilots to face it. Call a friend, synchronize your movements and move toward victory!",

@@ -1,7 +1,6 @@
 {
     "id": "ld29",
     "title": "Persona",
-    "thumbnail": "ld29.png",
     "image": "ld/ld29.png",
     "release_date": "2014-04-27",
     "event": {
@@ -21,10 +20,9 @@
         }
     ],
     "tools": ["ActionScript 3", "Flixel", "SiON"],
-    "short_description": "Short (really short!) visual novel",
     "description": [
-        "Day after day, everyone put on some kind of mask to interact with others. That's how we [...] to live in society.",
-        "What if you weren't able to do something as simple as that? You would be left only with you most true self. You'd be forced to show that face of yours in front of others.,",
-        "But what if you could put a persona on and go on a usual?"
+        "Short adventure in which the protagonist can't, for a day, hide their true intentions. Anything they said would be their true self, without any filter.",
+        "However, they get masks that allow them to hide and display fake intentions.",
+        "With those, they must try to face simple daily situations..."
     ]
 }

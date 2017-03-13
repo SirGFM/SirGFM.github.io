@@ -1,7 +1,6 @@
 {
     "id": "ld35",
     "title": "A Simple Tale",
-    "thumbnail": "ld35.png",
     "image": "ld/ld35.png",
     "release_date": "2016-04-17",
     "event": {
@@ -25,8 +24,8 @@
         }
     ],
     "tools": ["SDL2", "GFraMe v2"],
-    "short_description": "Story driven prototype based on 'The Beauty and the Beast' fairy tale",
     "description": [
         "This game is about a simple tale.",
-        "You've probably already heard something similar to it..."]
+        "You've probably already heard something similar to it...",
+        "(It's also quite unfinished...)"]
 }

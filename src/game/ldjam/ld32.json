@@ -1,7 +1,6 @@
 {
     "id": "ld32",
     "title": "Kitten",
-    "thumbnail": "ld32.png",
     "image": "ld/ld32.png",
     "release_date": "2015-04-19",
     "event": {
@@ -25,6 +24,9 @@
         }
     ],
     "tools": ["SDL2", "GFraMe v2"],
-    "short_description": "Collect the 7 stones and fly by shooting rainbows in this platformer.",
-    "description": ["Legends tell about 7 stones of power. If one were to obtain all 7, a great power would be granted unto that being."]
+    "description": [
+        "A young boy and his loyal cat set off in search of the 7 stones of power. Legends tell that if one were to obtain all 7, a great power would be granted unto that being.",
+        "After acquiring a stone, the cat becomes able to fire lasers of the stone's color. This propels the boy on the opposing direction.",
+        "Spoilers: you fire rainbows at the end of this game."
+    ]
 }

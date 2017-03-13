@@ -1,7 +1,6 @@
 {
     "id": "ld28",
     "title": "Two Options...",
-    "thumbnail": "ld28.png",
     "image": "ld/ld28.png",
     "release_date": "2016-12-15",
     "event": {
@@ -21,10 +20,8 @@
         }
     ],
     "tools": ["ActionScript 3", "Flixel"],
-    "short_description": "Prototype-y precision platformer (further developed later)",
     "description": [
-        "While exploring a temple, you heard a call for help.",
-        "Do you have what it take to save them?",
-        "Can you really reach the best end?"
+        "Basic platformer. You hear a call for help from a temple, and venture into it to save them.",
+        "However, you are faced with a question when you finally reach the end..."
     ]
 }

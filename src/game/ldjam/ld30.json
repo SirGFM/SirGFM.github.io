@@ -1,7 +1,6 @@
 {
     "id": "ld30",
     "title": "The Nether",
-    "thumbnail": "ld30.png",
     "image": "ld/ld30.png",
     "release_date": "2014-08-24",
     "event": {
@@ -21,9 +20,9 @@
         }
     ],
     "tools": ["ActionScript 3", "Flixel", "SiON"],
-    "short_description": "Broken 2D... strategy... platformer (maybe)",
     "description": [
-        "There are three close worlds that are connected by an area void of life. That came to be called as \"Neutral area\", with the others being \"Dark World\", inhabited by Dark'ans; \"Light World\", inhabited by Light'ans; and \"The Nether\", were creatures lives.",
-        "Those that lives on The Nether don't usually cause harm by themselves. But when commanded, they can make into a fearsome force.",
-        "Lately, both worlds have been attacked, through the neutral area, by nether creatures. Since there has always been animosity between them and they are oblivious to the fact that both are being attacked, each is blaming the other one... "]
+        "Small and completely unfinished strategy(?) game about conflicts between two races.",
+        "Play as either of them (Dark'ans, from the \"Dark World\", or Light'ans, from the \"Light World\"), defend yourself from attacks from nether creatures, and try to uncover who's behind those attacks. Except, that last part wasn't implemented...",
+        "This isn't a game as much as it's a \"(bad) pathfinder for 2D platformers\" prototype..."
+    ]
 }

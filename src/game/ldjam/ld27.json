@@ -1,7 +1,6 @@
 {
     "id": "ld27",
     "title": "Space Rift",
-    "thumbnail": "ld27.png",
     "image": "ld/ld27.png",
     "release_date": "2013-08-25",
     "event": {
@@ -21,11 +20,8 @@
         }
     ],
     "tools": ["ActionScript 3", "Flixel"],
-    "short_description": "Space shmup",
     "description": [
-        "Be careful!",
-        "Something happened and rifts are opening in space.",
-        "What's worse, aliens are coming from inside those breaches and are wrecking havoc!",
-        "Go forth and defeat 'em!"
+        "Basic shoot 'em up. Fight waves of enemies that appear each 10 seconds.",
+        "The boss also switch its active weapon each 10 seconds, and it will only fall when all weapons are destroyed."
     ]
 }

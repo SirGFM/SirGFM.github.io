@@ -1,7 +1,6 @@
 {
     "id": "",
     "title": "",
-    "thumbnail": "",
     "image": "",
     "release_date": "",
     "event": {
@@ -25,7 +24,6 @@
         },
     ],
     "tools": ["SDL2", "GFraMe v2"],
-    "short_description": "TODO",
     "description": [
         "",
         ""]
