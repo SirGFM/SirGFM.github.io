@@ -16,7 +16,18 @@
     "distribution": [
         {
             "platform": "web",
-            "link": "https://github.com/SirGFM/ld27/releases/download/v1.0.0/GFMLD27.swf"
+            "link": "/webgames/ld27/ld27.html",
+            "technology": "flash",
+            "width": "512",
+            "height": "512",
+            "how_to_play": [
+                "Move with arrow keys",
+                "Press X to shoot",
+                "Press C to use the special (makes you invincible)",
+                "The special may only be used if it's not blinking",
+                "If you keep shooting for too long, the ship will overheat and won't be able to shoot for a while",
+                "Enemies may drop collectables"
+            ]
         }
     ],
     "tools": ["ActionScript 3", "Flixel"],

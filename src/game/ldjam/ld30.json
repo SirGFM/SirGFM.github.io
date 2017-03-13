@@ -16,7 +16,17 @@
     "distribution": [
         {
             "platform": "web",
-            "link": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld30/compo/GFMLD30.swf"
+            "link": "/webgames/ld30/ld30.html",
+            "technology": "flash",
+            "width": "640",
+            "height": "480",
+            "how_to_play": [
+                "Press 0 to (un)mute the music",
+                "Click on units to select them and issue commands (may require clicking on the floor or on enemies)",
+                "Press either P or escape to pause the game (you may issue commands while paused)",
+                "Move the camera with either the arrow keys or A and D",
+                "Text window (advancing text and selecting an option) requires the keyboard"
+            ]
         }
     ],
     "tools": ["ActionScript 3", "Flixel", "SiON"],

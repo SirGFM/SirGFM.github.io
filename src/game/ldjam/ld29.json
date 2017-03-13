@@ -16,7 +16,16 @@
     "distribution": [
         {
             "platform": "web",
-            "link": "https://github.com/SirGFM/ld29/releases/download/v1.0.0/GFMLD29.swf"
+            "link": "/webgames/ld29/ld29.html",
+            "technology": "flash",
+            "width": "640",
+            "height": "480",
+            "how_to_play": [
+                "Select the \"correct\" mask to advance without breaking it",
+                "Use the arrow keys to select (i.e., highlight) an option",
+                "Press either Z, X, Y, spacebar or enter to use the selected option",
+                "Press any key to advance text"
+            ]
         }
     ],
     "tools": ["ActionScript 3", "Flixel", "SiON"],

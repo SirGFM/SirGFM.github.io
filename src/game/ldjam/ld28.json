@@ -16,7 +16,16 @@
     "distribution": [
         {
             "platform": "web",
-            "link": "https://github.com/SirGFM/ld28/releases/download/v1.0.0/GFMLD28.swf"
+            "link": "/webgames/ld28/ld28.html",
+            "technology": "flash",
+            "width": "640",
+            "height": "480",
+            "how_to_play": [
+                "Move with arrow keys",
+                "Press either Z, X, C, Y or spacebar to jump",
+                "Climb ladders with up",
+                "Note that you can't stand on top of ladders"
+            ]
         }
     ],
     "tools": ["ActionScript 3", "Flixel"],

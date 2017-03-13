@@ -12,7 +12,7 @@ class PageWriter(BaseWriter):
         - Call 'insert' with the required *.css and *.js.
     """
 
-    def __init__(self, title, url, nav, has_game_overlay=False):
+    def __init__(self, title, url, nav, has_game_overlay=False, register_nav=True):
         """Initializes a PageWriter.
         Note that the page is registered into the navigator as soon as it's instantiated
 
@@ -20,6 +20,7 @@ class PageWriter(BaseWriter):
         url -- Page's address. Also used to generate the page's output file (by appending .html and removing the leading '/')
         nav -- Navigation object (which should be fed with every page before being inserted)
         has_game_overlay -- Whether this game should have a 'game overlay'
+        register_nav -- Whether this page should register itself on the navigation menu
         """
         super(PageWriter, self).__init__()
         if url == '/':
@@ -28,7 +29,8 @@ class PageWriter(BaseWriter):
             self._out = url[1:] + '.html'
             url += '.html'
         self._nav = nav
-        self._nav.register(title, url)
+        if register_nav:
+            self._nav.register(title, url)
         self._has_game_overlay = has_game_overlay
 
     def insert_content(self):

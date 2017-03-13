@@ -185,6 +185,14 @@ img.content {
     margin-right: 1.5em;
 }
 
+object.game {
+    margin: auto;
+    display: table;
+    padding: 4px;
+    border: solid;
+    border-color: #000000;
+}
+
 /**
  * Default link styling:
  *  - Underscore only on hover

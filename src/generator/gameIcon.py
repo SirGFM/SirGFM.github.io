@@ -33,6 +33,38 @@ class Game(object):
         try: return self._decoded['title']
         except: return 'No Title'
 
+    def subtitle(self):
+        """Try to retrieve the game's subtitle (usually refering the event it was made for)"""
+        try:
+            event = self._decoded['event']['title']
+        except:
+            return None
+
+        if event == 'Ludum Dare':
+            try:
+                return 'Made for: {} {} (Theme: {})'.format(
+                    self._decoded['event']['title'],
+                    self._decoded['event']['edition'],
+                    self._decoded['event']['theme'])
+            except:
+                return 'Failed to parse Ludum Dare event info'
+
+    def get_flash_data(self):
+        """ Try to retrieve the data for a flash game"""
+        try:
+            for platform in self._decoded['distribution']:
+                if platform['platform'] == 'web' and platform['technology'] == 'flash':
+                    return platform
+        except: return None
+
+    def web_link(self):
+        """Try to retrieve the link for a web game"""
+        try:
+            for platform in self._decoded['distribution']:
+                if platform['platform'] == 'web':
+                    return platform['link']
+        except: return None
+
     def release_date(self):
         """Try to retrieve the component's release date"""
         try: return self._decoded['release_date']
