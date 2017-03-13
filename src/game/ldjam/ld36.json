@@ -4,20 +4,26 @@
     "thumbnail": "ld36.png",
     "image": "ld/ld36.png",
     "release_date": "2016-08-28",
-    "event": "Ludum Dare",
-    "event_edition": "#36 (compo)",
-    "event_theme": "Ancient Technology",
-    "event_start_date": "2016-08-26",
-    "event_end_date": "2016-08-29",
-    "event_entry": "http://ludumdare.com/compo/ludum-dare-36/?action=preview&uid=7375",
-    "source_code": "https://github.com/SirGFM/ld36/tree/ludumdare_36",
-    "timelapse": "https://www.youtube.com/watch?v=bUc21jlEE8s",
-    "distribution": {
-        "direct_link": {
-            "Windows": "https://github.com/SirGFM/ld36/releases/download/v1.0.0/burning_light_win.zip",
-            "Linux": "https://github.com/SirGFM/ld36/releases/download/v1.0.0/burning_light_linux.tar.gz"
-        }
+    "event": {
+        "title": "Ludum Dare",
+        "edition": "#36 (compo)",
+        "theme": "Ancient Technology",
+        "start_date": "2016-08-26",
+        "end_date": "2016-08-29",
+        "page": "http://ludumdare.com/compo/ludum-dare-36/?action=preview&uid=7375",
+        "source": "https://github.com/SirGFM/ld36/tree/ludumdare_36",
+        "timelapse": "https://www.youtube.com/watch?v=bUc21jlEE8s"
     },
+    "distribution": [
+        {
+            "platform": "Windows",
+            "link": "https://github.com/SirGFM/ld36/releases/download/v1.0.0/burning_light_win.zip"
+        },
+        {
+            "platform": "Linux",
+            "link": "https://github.com/SirGFM/ld36/releases/download/v1.0.0/burning_light_linux.tar.gz"
+        }
+    ],
     "tools": ["SDL2", "GFraMe v2"],
     "short_description": "Short prototype about refracting light through magical lens to light flammable stuff.",
     "description": [

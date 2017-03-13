@@ -4,19 +4,22 @@
     "thumbnail": "ld27.png",
     "image": "ld/ld27.png",
     "release_date": "2013-08-25",
-    "event": "Ludum Dare",
-    "event_edition": "#27 (Compo)",
-    "event_theme": "10 Seconds",
-    "event_start_date": "2013-08-23",
-    "event_end_date": "2013-08-26",
-    "event_entry": "http://ludumdare.com/compo/ludum-dare-27/?action=preview&uid=7375",
-    "source_code": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld27/gfm_ld27.rar",
-    "timelapse": "http://www.youtube.com/watch?v=R9rWHKDfbgY",
-    "distribution": {
-        "direct_link": {
-            "Flash (link possibly broken D:)": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld27/GFMLD27.swf"
-        }
+    "event": {
+        "title": "Ludum Dare",
+        "edition": "#27 (Compo)",
+        "theme": "10 Seconds",
+        "start_date": "2013-08-23",
+        "end_date": "2013-08-26",
+        "page": "http://ludumdare.com/compo/ludum-dare-27/?action=preview&uid=7375",
+        "source": "https://github.com/SirGFM/ld27/",
+        "timelapse": "http://www.youtube.com/watch?v=R9rWHKDfbgY"
     },
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "https://github.com/SirGFM/ld27/releases/download/v1.0.0/GFMLD27.swf"
+        }
+    ],
     "tools": ["ActionScript 3", "Flixel"],
     "short_description": "Space shmup",
     "description": [

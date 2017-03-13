@@ -12,13 +12,14 @@ class PageWriter(BaseWriter):
         - Call 'insert' with the required *.css and *.js.
     """
 
-    def __init__(self, title, url, nav):
+    def __init__(self, title, url, nav, has_game_overlay=False):
         """Initializes a PageWriter.
         Note that the page is registered into the navigator as soon as it's instantiated
 
         title -- Title used on the navigation bar
         url -- Page's address. Also used to generate the page's output file (by appending .html and removing the leading '/')
         nav -- Navigation object (which should be fed with every page before being inserted)
+        has_game_overlay -- Whether this game should have a 'game overlay'
         """
         super(PageWriter, self).__init__()
         if url == '/':
@@ -28,6 +29,7 @@ class PageWriter(BaseWriter):
             url += '.html'
         self._nav = nav
         self._nav.register(title, url)
+        self._has_game_overlay = has_game_overlay
 
     def insert_content(self):
         """Overwrite this function on sub-classes to create new pages"""
@@ -94,6 +96,8 @@ class PageWriter(BaseWriter):
         self.write('<body>')
         self.tab()
 
+        if self._has_game_overlay:
+            self._insert_game_overlay()
         self._insert_body_header()
         self._nav.insert(self)
         self._insert_content()
@@ -101,6 +105,26 @@ class PageWriter(BaseWriter):
 
         self.untab()
         self.write('</body>')
+
+    def _insert_game_overlay(self):
+        """Inserts the page's game overlay (i.e., a floating div that displays the selected game)"""
+        defer_ = Defer()
+
+        self.write('<div id="floating-game-detail" class="game_description">')
+        defer_.push(lambda :self.write('</div> <!-- floating-game-detail -->'))
+        defer_.push(self.untab)
+        self.tab()
+
+        self.write('<h1 id="detail-title" class="game_description"> </h1>')
+        self.write('<h2 id="detail-jam-title" class="game_description"> </h2>')
+        self.write('<div id="detail-jam-content" class="game_description_content"> </div>')
+        self.write('<h2 id="detail-about-title" class="game_description"> </h2>')
+        self.write('<div id="detail-about" class="game_description_content"> </div>')
+        self.write('<h2 id="detail-download-title" class="game_description"> </h2>')
+        self.write('<div id="detail-download" class="game_description_content"> </div>')
+        self.write('<p id="detail-close" class="close_game_description" onclick="HideGameDescription()"> Close </p>')
+
+        defer_.run()
 
     def _insert_body_header(self):
         """Inserts the page's title (i.e., the header on the top of the page)"""

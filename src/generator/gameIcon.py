@@ -123,37 +123,6 @@ class GameWriter(BaseWriter):
         """
         self._game = game
 
-    def insert_repo(self):
-        """Insert a image linked to the repository. If no URL was specified, this functions does nothing"""
-        if not self._game.has_repo():
-            return
-        self.write('<a href="{}" title="Clone the game\'s source">'.format(self._game.repo()))
-        self.tab()
-        self.write_content('p', 'Source code', style='content')
-        self.untab()
-        self.write('</a>')
-
-    def insert_downloadlink(self):
-        """Insert the link to the download page(s)"""
-        self.write('<p class="content">', do_break=False)
-        if self._game.is_on_itchio():
-            self.write('Get it now on ', do_break=False)
-            self.write('<a href="{}" title="Procceed to {}\'s page on Itch.io">'.format(
-                    self._game.itch_link(), self._game.title()), do_break=False)
-            self.write('Itch.io', do_break=False)
-            self.write('<small> Available for {} </small>'.format(self._game.itch_platforms()), do_break=False)
-            self.write('</a>', do_break=False)
-        elif self._game.is_on_directlink():
-            self.write('')
-            self.write('Get it now for: ')
-            self.write('<ul>')
-            self.tab()
-            for platform, url in self._game.directlink_platforms().iteritems():
-                self.write('<li> <a href="{}"> {} </a></li>'.format(url, platform))
-            self.untab()
-            self.write('</ul>')
-        self.write('</p>')
-
     def insert(self, page):
         """Insert this component (game icon + description) into a page
         
@@ -163,13 +132,13 @@ class GameWriter(BaseWriter):
         self.set_indent(page.get_indent())
         self.set_output(page.get_output())
 
-        self.write('<div id="{}" class="gamelisting" onclick="ShowGameDesc(this)">'.format(self._game.id()))
+        self.write('<div id="{}" class="gamelisting" '
+                   'onclick="SetGameDescription(this); ToggleGameDescriptionVisibility()">'.format(self._game.id()))
         defer_.push(lambda :self.write('</div> <!-- {} gamelisting -->'.format(self._game.id())))
         defer_.push(self.untab)
         self.tab()
 
         self.insert_icon()
-        self.insert_description()
 
         defer_.run()
 
@@ -196,31 +165,6 @@ class GameWriter(BaseWriter):
 
         # NOTE: This headding inherits its color/formatting from its parent div
         self.write_content('h1', self._game.title())
-
-        defer_.run()
-
-    def insert_description(self):
-        """Insert this component's description"""
-        defer_ = Defer()
-
-        self.write('<div id="{}-desc" class="gamedesc-hidden">'.format(self._game.id()))
-        defer_.push(lambda: self.write('</div> <!-- {}-desc -->'.format(self._game.id())))
-        defer_.push(self.untab)
-        self.tab()
-
-        self.write_content('h1', self._game.title(), style='content')
-        if self._game.has_event():
-            self.write_content('h2', 'Made for {}'.format(self._game.event()), style='content')
-        if self._game.was_released():
-            self.write_content('h3', 'Published: {}'.format(self._game.release_date()), style='content')
-        else:
-            self.write_content('h3', 'Release Date: {}'.format(self._game.release_date()), style='content')
-
-        self.write_content('p', self._game.short_desc(), style='content')
-
-        self.insert_downloadlink()
-
-        self.insert_repo()
 
         defer_.run()
 

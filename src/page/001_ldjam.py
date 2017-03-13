@@ -22,7 +22,7 @@ class Page(PageWriter):
                 continue
             self.json_list.append(path)
 
-        super(Page, self).__init__(title='LDJAM', url='/ldjam', nav=nav)
+        super(Page, self).__init__(title='LDJAM', url='/ldjam', nav=nav, has_game_overlay=True)
 
     def insert_content(self):
         """Insert the content of the page"""
@@ -34,5 +34,7 @@ class Page(PageWriter):
 
     def do_create(self):
         """Create the page, adding every require css/js"""
-        self.create(style_list=['page.css', 'icon.css'], script_list=['mouseover.js'], json_list=self.json_list)
+        self.create(style_list=['page.css', 'icon.css', 'game_description.css'],
+            script_list=['mouseover.js', 'game_description.js'],
+            json_list=self.json_list)
 

@@ -4,19 +4,22 @@
     "thumbnail": "ld29.png",
     "image": "ld/ld29.png",
     "release_date": "2014-04-27",
-    "event": "Ludum Dare",
-    "event_edition": "#29 (Compo)",
-    "event_theme": "Beneath the Surface",
-    "event_start_date": "2014-04-25",
-    "event_end_date": "2014-04-28",
-    "event_entry": "http://ludumdare.com/compo/ludum-dare-29/?action=preview&uid=7375",
-    "source_code": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld29/compo/gfm_ld29_src.zip",
-    "timelapse": "https://www.youtube.com/watch?v=o0FqvIQ3c2A",
-    "distribution": {
-        "direct_link": {
-            "Flash (link possibly broken D:)": "https://dl.dropboxusercontent.com/u/55733901/LD48/ld29/compo/GFMLD29.swf"
-        }
+    "event": {
+        "title": "Ludum Dare",
+        "edition": "#29 (Compo)",
+        "theme": "Beneath the Surface",
+        "start_date": "2014-04-25",
+        "end_date": "2014-04-28",
+        "page": "http://ludumdare.com/compo/ludum-dare-29/?action=preview&uid=7375",
+        "source": "https://github.com/SirGFM/ld29/",
+        "timelapse": "https://www.youtube.com/watch?v=o0FqvIQ3c2A"
     },
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "https://github.com/SirGFM/ld29/releases/download/v1.0.0/GFMLD29.swf"
+        }
+    ],
     "tools": ["ActionScript 3", "Flixel", "SiON"],
     "short_description": "Short (really short!) visual novel",
     "description": [

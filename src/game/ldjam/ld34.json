@@ -4,20 +4,26 @@
     "thumbnail": "ld34.png",
     "image": "ld/ld34.png",
     "release_date": "2015-12-13",
-    "event": "Ludum Dare",
-    "event_edition": "#34 (compo)",
-    "event_theme": "Two Button Controls, Growing",
-    "event_start_date": "2015-12-11",
-    "event_end_date": "2015-12-14",
-    "event_entry": "http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=7375",
-    "source_code": "https://github.com/SirGFM/ld34/tree/v1.0.0",
-    "timelapse": "https://youtu.be/7zYXDl92vx4",
-    "distribution": {
-        "direct_link": {
-            "Windows": "https://github.com/SirGFM/ld34/releases/download/v1.0.0/MK_F417XX3_win.zip",
-            "Linux": "https://github.com/SirGFM/ld34/releases/download/v1.0.0/MK_F417XX3_linux.tar.gz"
-        }
+    "event": {
+        "title": "Ludum Dare",
+        "edition": "#34 (compo)",
+        "theme": "Two Button Controls, Growing",
+        "start_date": "2015-12-11",
+        "end_date": "2015-12-14",
+        "page": "http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=7375",
+        "source": "https://github.com/SirGFM/ld34/tree/v1.0.0",
+        "timelapse": "https://youtu.be/7zYXDl92vx4"
     },
+    "distribution": [
+        {
+            "platform": "Windows",
+            "link": "https://github.com/SirGFM/ld34/releases/download/v1.0.0/MK_F417XX3_win.zip"
+        },
+        {
+            "platform": "Linux",
+            "link": "https://github.com/SirGFM/ld34/releases/download/v1.0.0/MK_F417XX3_linux.tar.gz"
+        }
+    ],
     "tools": ["SDL2", "GFraMe v2"],
     "short_description": "Short prototype about moving an invulnerable robot by moving its feet separately.",
     "description": [
