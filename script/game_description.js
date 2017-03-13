@@ -220,10 +220,13 @@ function SetGameDescription(ctx) {
             case 'detail-about': {
                 var desc = ''
                 var j
+                if (dataObj.release_date) {
+                    desc += '<p> <strong>Original Release Date:</strong> ' + dataObj.release_date + '</p>\n'
+                }
                 for (j = 0; j < dataObj.description.length; j++) {
                     desc += '<p>'
                     desc += dataObj.description[j]
-                    desc += '</p>'
+                    desc += '</p>\n'
                 }
                 child.innerHTML = desc
             } break;
