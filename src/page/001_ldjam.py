@@ -21,6 +21,7 @@ class Page(PageWriter):
             elif not path.endswith('.json'):
                 continue
             self.json_list.append(path)
+        self.json_list.reverse()
 
         super(Page, self).__init__(title='LDJAM', url='/ldjam', nav=nav, has_game_overlay=True)
 
