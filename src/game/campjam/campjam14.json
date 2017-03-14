@@ -1,0 +1,25 @@
+{
+    "id": "campjam14",
+    "title": "Once Upon a Castle",
+    "image": "campjam/campjam14.png",
+    "release_date": "2014-08-03",
+    "event": {
+        "title": "CampJam",
+        "edition": "2014",
+        "theme": "picture of the Neuschwanstein Castle",
+        "start_date": "2014-08-01",
+        "end_date": "2014-08-03",
+        "source": "https://github.com/SirGFM/Once-Upon-A-Castle/tree/066ba4c97558a7ed1fa733cf5d3c9eb0bb07b42f"
+    },
+    "distribution": [
+        {
+            "platform": "Windows",
+            "link": "..."
+        }
+    ],
+    "tools": ["Unity 3D"],
+    "description": [
+        "Made with <a href=\"http://raphaellacerda.tumblr.com\">Raphael Lacerda</a>",
+        "Command villagers to save the princess by modifying the castle (by dropping tiles onto it) and clicking on them (e.g., clicking o staircase to order all villagers on that tile to go upstairs)"
+    ]
+}

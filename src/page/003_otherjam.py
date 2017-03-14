@@ -13,12 +13,15 @@ class Page(PageWriter):
         # Create a list with all required JSON files by this page
         self.ggj_list = GetGameList('src/game/ggj/')
         self._1gam_list = GetGameList('src/game/1gam/')
+        self.campjam_list = GetGameList('src/game/campjam')
 
         self.json_list = []
         # Create a single list with every JSON path
         for item in self.ggj_list:
             self.json_list.append(item)
         for item in self._1gam_list:
+            self.json_list.append(item)
+        for item in self.campjam_list:
             self.json_list.append(item)
 
         super(Page, self).__init__(title='OTHER JAMS', url='/jam', nav=nav, has_game_overlay=True)

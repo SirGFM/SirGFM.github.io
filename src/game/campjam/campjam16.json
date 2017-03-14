@@ -1,0 +1,30 @@
+{
+    "id": "campjam16",
+    "title": "Warnicorn",
+    "image": "campjam/campjam16.png",
+    "release_date": "2016-07-31",
+    "event": {
+        "title": "CampJam",
+        "edition": "2016",
+        "theme": "Astronauts and Unicorns",
+        "start_date": "2016-07-29",
+        "end_date": "2016-07-31",
+        "page": "https://itch.io/jam/campjam-2016/rate/78186",
+        "source": "https://github.com/SirGFM/UnicornJoust/tree/v0.0.1-campjam"
+    },
+    "distribution": [
+        {
+            "platform": "Windows",
+            "link": "..."
+        },
+        {
+            "platform": "Linux",
+            "link": "..."
+        }
+    ],
+    "tools": ["Unity 3D"],
+    "description": [
+        "Unicorns jousting in space (while mounting astronauts). It's a 4-way multiplayer game.",
+        "Originally made by <a href=\"http://www.gamux.com.br/\">Gamux</a>"
+    ]
+}
