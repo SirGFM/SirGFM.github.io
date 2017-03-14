@@ -14,6 +14,7 @@ class Page(PageWriter):
         self.ggj_list = GetGameList('src/game/ggj/')
         self._1gam_list = GetGameList('src/game/1gam/')
         self.campjam_list = GetGameList('src/game/campjam')
+        self.otherjam_list = GetGameList('src/game/otherjam')
 
         self.json_list = []
         # Create a single list with every JSON path
@@ -22,6 +23,8 @@ class Page(PageWriter):
         for item in self._1gam_list:
             self.json_list.append(item)
         for item in self.campjam_list:
+            self.json_list.append(item)
+        for item in self.otherjam_list:
             self.json_list.append(item)
 
         super(Page, self).__init__(title='OTHER JAMS', url='/jam', nav=nav, has_game_overlay=True)
@@ -44,8 +47,10 @@ class Page(PageWriter):
         InsertGameIcons(self, self._1gam_list)
 
         self.write_content('h2', 'CampJam', style='content')
+        InsertGameIcons(self, self.campjam_list)
 
-        self.write_content('h2', 'Other Jams', style='content')
+        self.write_content('h2', 'Others', style='content')
         self.write_content('p', 'This category has games from jams that I haven\'t taken part of enough '
                 'event to warrantry their own separated categories.', style='content')
+        InsertGameIcons(self, self.otherjam_list)
 

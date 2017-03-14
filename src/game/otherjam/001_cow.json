@@ -1,0 +1,31 @@
+{
+    "id": "001_cow",
+    "title": "The Cow Strikes Back",
+    "image": "otherjam/lowrez16_cow.png",
+    "release_date": "2016-04-09",
+    "event": {
+        "title": "LOWREZJAM",
+        "edition": "2016",
+        "start_date": "2016-04-01",
+        "end_date": "2016-04-18",
+        "page": "https://itch.io/jam/lowrezjam2016/rate/60685",
+        "source": "https://github.com/SirGFM/meetingjam_2016/tree/lowrezjam",
+        "about": [
+            "Make a game in 64x64 pixels."
+        ]
+    },
+    "distribution": [
+        {
+            "platform": "itch.io",
+            "link": "https://gfm.itch.io/the-cow-strikes-back",
+            "target_platforms": [
+                "Windows",
+                "Linux"
+            ]
+        }
+    ],
+    "tools": ["SDL2", "GFraMe v2", "c_synth"],
+    "description": [
+        "Short action game about a cow that must defeat aliens by shooting lasers."
+    ]
+}

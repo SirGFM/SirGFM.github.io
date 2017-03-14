@@ -11,16 +11,6 @@
         "end_date": "2015-08-02",
         "source": "https://github.com/SirGFM/campjam15/tree/v1.0"
     },
-    "distribution": [
-        {
-            "platform": "Windows",
-            "link": "..."
-        },
-        {
-            "platform": "Linux",
-            "link": "..."
-        }
-    ],
     "tools": ["SDL2", "GFraMe v2"],
     "description": [
         "A scientist tries to create a cyborg-dinosaur, but his creatures turns against its masters...",

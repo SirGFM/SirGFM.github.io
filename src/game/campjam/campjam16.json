@@ -14,12 +14,11 @@
     },
     "distribution": [
         {
-            "platform": "Windows",
-            "link": "..."
-        },
-        {
-            "platform": "Linux",
-            "link": "..."
+            "platform": "itch.io",
+            "link": "https://gfm.itch.io/warnicorn",
+            "target_platforms": [
+                "Windows"
+            ]
         }
     ],
     "tools": ["Unity 3D"],
