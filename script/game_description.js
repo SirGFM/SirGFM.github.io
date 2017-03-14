@@ -119,11 +119,18 @@ function _StartAnimation(dir, dest) {
  * @param  [ in]event The event object
  */
 function _SetEventTitle(ctx, event) {
+    title = ''
     switch (event.title) {
-        case 'Ludum Dare': {
-            ctx.innerHTML = 'Ludum Dare Entry Details'
+        case 'LOWREZJAM':
+            title += '#'
+        case 'Ludum Dare':
+        case 'Global Game Jam':
+        case 'One Game a Month':
+        case 'CampJam': {
+            title += event.title + ' Entry Details'
         } break;
     }
+    ctx.innerHTML = title
 }
 
 function _CreateListItem(title, content) {
@@ -144,16 +151,33 @@ function _CreateListItem(title, content) {
  */
 function _SetEventContent(ctx, event) {
     switch (event.title) {
-        case 'Ludum Dare': {
+        default: {
             var list = '<ul>\n'
             list += _CreateListItem('Made for', event.title + ' ' + event.edition)
-            list += _CreateListItem('Theme', event.theme)
+            if (event.theme) {
+                list += _CreateListItem('Theme', event.theme)
+            }
+            if (event.start_date) {
+                list += _CreateListItem('Start Date', event.start_date)
+            }
+            if (event.end_date) {
+                list += _CreateListItem('End Date', event.end_date)
+            }
             list += _CreateListItem('', '<a href="' + event.page + '">Entry page</a>')
-            list += _CreateListItem('', '<a href="' + event.source + '">Source code</a>')
+            if (event.source) {
+                list += _CreateListItem('', '<a href="' + event.source + '">Source code</a>')
+            }
             if (event.timelapse) {
                 list += _CreateListItem('', '<a href="' + event.timelapse + '">Timelapse</a>')
             }
             list += '</ul>\n'
+            if (event.about) {
+                var i = 0
+                list += '<p><strong> About the \"' + event.title + '\" game jam: </strong></p>\n'
+                for (i = 0; i < event.about.length; i++) {
+                    list += '<p> ' + event.about[i] + ' </p>\n'
+                }
+            }
             ctx.innerHTML = list
         } break;
     }

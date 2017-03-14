@@ -41,12 +41,19 @@ class Page(PageWriter):
         self.write_content('p', 'List of games I\'ve made for various other jams.', style='content')
 
         self.write_content('h2', 'Global Game Jam', style='content')
+        self.write_content('p', 'The <a href=\"http://globalgamejam.org/\">Global Game Jam</a> is an annual '
+                'game jam that takes places in various jam sites through the world. It\'s usually held at '
+                'the end of January. It\'s currently a 48 hours event', style='content')
         InsertGameIcons(self, self.ggj_list)
 
         self.write_content('h2', 'One Game a Month', style='content')
+        self.write_content('p', '<a href=\"http://www.onegameamonth.com/\">One Game a Month</a> is a monthly '
+                'challenge to try and finish one game each month for a whole year.', style='content')
         InsertGameIcons(self, self._1gam_list)
 
         self.write_content('h2', 'CampJam', style='content')
+        self.write_content('p', 'The CampJam is a local 48 hours game jam that (usually) takes place the '
+                'weekend before classes are back, on the July vacations.', style='content')
         InsertGameIcons(self, self.campjam_list)
 
         self.write_content('h2', 'Others', style='content')

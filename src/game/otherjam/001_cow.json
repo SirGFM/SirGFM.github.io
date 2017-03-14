@@ -26,6 +26,7 @@
     ],
     "tools": ["SDL2", "GFraMe v2", "c_synth"],
     "description": [
-        "Short action game about a cow that must defeat aliens by shooting lasers."
+        "Short action game about a cow that must defeat aliens by shooting lasers.",
+        "Originally made for the \"<a href=\"https://itch.io/jam/meeting-jam-2016\">Meeting Jam 2016</a>\", a local 24 hours game jam, and later expanded for the \"LOWREZJAM\""
     ]
 }
