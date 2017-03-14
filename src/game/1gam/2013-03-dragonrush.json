@@ -1,0 +1,25 @@
+{
+    "id": "2013-03-dragonrush",
+    "title": "Dragon Rush",
+    "image": "1gam/1gam03_dricon.png",
+    "release_date": "2013-04-02",
+    "event": {
+        "title": "One Game a Month",
+        "edition": "March, 2013",
+        "theme": "",
+        "start_date": "2013-03-01",
+        "end_date": "2013-04-04",
+        "page": "http://www.onegameamonth.com/SirGFM"
+    },
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "http://www.kongregate.com/games/Ganshu/dragon-rush"
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "Simple auto-runner about a knight and its dragon.",
+        "Slashing spend energy, which you recover by eating fruits."
+    ]
+}

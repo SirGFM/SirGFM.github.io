@@ -1,0 +1,24 @@
+{
+    "id": "2013-02-shooter",
+    "title": "Intergalactic Fighter",
+    "image": "1gam/1gam02_intergalbla.png",
+    "release_date": "2013-03-02",
+    "event": {
+        "title": "One Game a Month",
+        "edition": "February, 2013",
+        "start_date": "2013-02-01",
+        "end_date": "2013-03-04",
+        "page": "http://www.onegameamonth.com/SirGFM"
+    },
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "http://www.kongregate.com/games/Ganshu/intergalacticn-fighter"
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "Space sh'm'up.",
+        "Enemies may drop components when defeated. Equiping those cost some energy (depending on the component type), so one should try and build the best ship for themselves."
+    ]
+}

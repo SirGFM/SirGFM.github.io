@@ -1,0 +1,25 @@
+{
+    "id": "2013-01-colorrunner",
+    "title": "Color Runner",
+    "image": "1gam/1gam01_colorrunner.png",
+    "release_date": "2013-02-23",
+    "event": {
+        "title": "One Game a Month",
+        "edition": "January, 2013",
+        "start_date": "2013-01-01",
+        "end_date": "2013-02-30",
+        "page": "http://www.onegameamonth.com/SirGFM"
+    },
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "http://www.kongregate.com/games/Ganshu/colorrunner"
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "Action platformer that uses colors as its main mechanic.",
+        "Grab colored coins to bring back colors to the world. If you grab enough coins of a given color, new platforms shall appear.",
+        "This is sort-of a sequel/spin-off of my Ludum Dare #22 entry, Loneliness."
+    ]
+}
