@@ -1,0 +1,23 @@
+{
+    "id": "jjat",
+    "title": "JJAT",
+    "image": "non-jam/jjat.gif",
+    "release_date": "2015-04-04",
+    "source_code": "https://github.com/SirGFM/big-15",
+    "distribution": [
+        {
+            "platform": "itch.io",
+            "link": "https://gfm.itch.io/jjat",
+            "target_platforms": [
+                "Windows",
+                "Linux"
+            ]
+        }
+    ],
+    "tools": ["SDL2", "GFraMe v2"],
+    "description": [
+        "JJAT is an action platformer where you must reach the end of the level and beat the boss... except you've got no weapons, and there are tons of enemies out there (seriously, this game really lacked testing, so...). At least, there are items that may help on your quest",
+        "Control two characters at once, or play with a friend.",
+        "JJAT is slightly based off on my Global Game Jam 2015 entry, since there's also a teleport mechanic and it's also a 2-characters-1-player.game. It was originally submitted to BIG Festival 2015"
+    ]
+}

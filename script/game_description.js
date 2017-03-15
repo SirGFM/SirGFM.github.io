@@ -287,6 +287,17 @@ function SetGameDescription(ctx) {
                     if (obj.platform == 'web') {
                         list += _CreateListItem('', '<a href="' + obj.link + '">Play directly in your browser</a>')
                     }
+                    else if (obj.platform == 'itch.io' && obj.target_platforms && obj.target_platforms.length > 0) {
+                        var k
+                        var platforms = obj.target_platforms[0]
+                        for (k = 1; k < obj.target_platforms.length - 1; k++) {
+                            platforms += ', ' + obj.target_platforms[k]
+                        }
+                        if (k < obj.target_platforms.length) {
+                            platforms += ' and ' + obj.target_platforms[k]
+                        }
+                        list += _CreateListItem('', '<a href="' + obj.link + '"> Download it from itch.io for ' + platforms + '</a>')
+                    }
                     else {
                         list += _CreateListItem('', '<a href="' + obj.link + '">Download for <strong>' + obj.platform + '</strong></a>')
                     }

@@ -10,7 +10,7 @@ class Page(PageWriter):
 
         nav -- Navigation object (which should be fed with every page before being inserted)
         """
-        self.json_list = GetGameList('src/game/games/')
+        self.json_list = GetGameList('src/game/non-jam/')
         super(Page, self).__init__(title='GAMES', url='/games', nav=nav, has_game_overlay=True)
 
     def insert_content(self):
