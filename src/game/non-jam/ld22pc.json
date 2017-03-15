@@ -1,0 +1,17 @@
+{
+    "id": "ld22pc",
+    "title": "Loneliness (post compo)",
+    "image": "ld/ld22.png",
+    "release_date": "2012-01-05",
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "http://www.kongregate.com/games/Ganshu/loneliness"
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "You are a lonely kitten. Touch colored balls to befriend them and lessen your loneliness. Just beware the evil kittens.",
+        "Post-compo version of my Ludum Dare #22 entry. The game is mostly the same, but it works as originally intended: colors changes as you befriends stuff; the music also follow those changes; stuff are spawned through all the playfield..."
+    ]
+}

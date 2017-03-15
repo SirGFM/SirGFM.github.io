@@ -1,0 +1,18 @@
+{
+    "id": "etdgttabtd",
+    "title": "Enter the Dungeon; Grab the Treasure and Beware the Dangers",
+    "image": "non-jam/etdgttabtd.png",
+    "release_date": "2014-04-31",
+    "source": "https://github.com/SirGFM/ld28/",
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "http://www.kongregate.com/games/Ganshu/enter-the-dungeon-grab-the-treasure-and-beware-the-dangers"
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "Precision platformer in which you must find a specific treasure (and enough gold pieces to leave the dungeon).",
+        "Post-compo version of my Ludum Dare #28 entry. It was submitted to BIG Festival 2014."
+    ]
+}

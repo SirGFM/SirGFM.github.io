@@ -1,0 +1,27 @@
+{
+    "id": "bugsquasher",
+    "title": "Bug Squasher",
+    "image": "non-jam/bugsquasher.png",
+    "release_date": "2014-11-09",
+    "source_code": "https://github.com/SirGFM/big-15",
+    "distribution": [
+        {
+            "platform": "itch.io",
+            "link": "https://gfm.itch.io/bug-squasher",
+            "target_platforms": [
+                "Windows",
+                "Linux",
+                "Android"
+            ]
+        },
+        {
+            "platform": "Google Play",
+            "link": "https://play.google.com/store/apps/details?id=com.wordpress.gfmgamecorner.bugsquasher"
+        }
+    ],
+    "tools": ["SDL2", "GFraMe"],
+    "description": [
+        "Arcade game about squashing bugs in a game.",
+        "It was made to test my game framework."
+    ]
+}

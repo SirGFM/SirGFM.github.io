@@ -298,6 +298,9 @@ function SetGameDescription(ctx) {
                         }
                         list += _CreateListItem('', '<a href="' + obj.link + '"> Download it from itch.io for ' + platforms + '</a>')
                     }
+                    else if (obj.platform == 'Google Play') {
+                        list += _CreateListItem('', '<a href="' + obj.link + '"> Get it on <strong>Google Play</strong> </a>')
+                    }
                     else {
                         list += _CreateListItem('', '<a href="' + obj.link + '">Download for <strong>' + obj.platform + '</strong></a>')
                     }

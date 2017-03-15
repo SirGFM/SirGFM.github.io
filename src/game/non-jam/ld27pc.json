@@ -1,0 +1,19 @@
+{
+    "id": "ld27pc",
+    "title": "Space Rift",
+    "image": "ld/ld27.png",
+    "release_date": "2013-11-10",
+    "source": "https://github.com/SirGFM/ld27/",
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "http://www.kongregate.com/games/Ganshu/space-rift"
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "Basic shoot 'em up. Fight waves of enemies that appear each 10 seconds.",
+        "The boss also switch its active weapon each 10 seconds, and it will only fall when all weapons are destroyed.",
+        "Post-compo version of my Ludum Dare #27 entry."
+    ]
+}
