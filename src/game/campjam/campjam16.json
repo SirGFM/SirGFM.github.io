@@ -24,6 +24,6 @@
     "tools": ["Unity 3D"],
     "description": [
         "Unicorns jousting in space (while mounting astronauts). It's a 4-way multiplayer game.",
-        "Originally made by <a href=\"http://www.gamux.com.br/\">Gamux</a>"
+        "Originally made by <a href=\"http://www.gamux.com.br/\">Gamux</a> (I was one of the two programmers). For the postjam, I remade all graphics but the background."
     ]
 }
