@@ -1,0 +1,33 @@
+{
+    "id": "laserdude",
+    "title": "Laser dude vs His enemies",
+    "image": "non-jam/laserdude.png",
+    "release_date": "2012-10-01",
+    "distribution": [
+        {
+            "platform": "web",
+            "link": "/webgames/laserdude/laserdude.html",
+            "technology": "flash",
+            "width": "500",
+            "height": "600",
+            "how_to_play": [
+                "DON'T! Seriously... this is bad... But, if you must...",
+                "Arrow keys to move",
+                "Hold shift down to move slowly",
+                "Press Z to shoot",
+                "Press X to use a bomb (clears nearby bullets)",
+                "Grab the thunders* that enemies drop (when killed) to increase your power",
+                "You are only killed if the center of your belt is hit",
+                "You may graze bullets for extra points",
+                "You get an extra life every 10000 points (or 100000, not sure...)",
+                "Controls may be remapped to any key",
+                "<small>* No, those aren't bananas...</small>"
+            ]
+        }
+    ],
+    "tools": ["ActionScript 3", "Flixel"],
+    "description": [
+        "This game is a bullet hell shooter. It's also quite unbalaced, by the way... It also the first(?) occurrence of my complete lack of sense for names in games...",
+        "Still, I'm quite proud of it. It's one of the few games (and the first, I believe) that I finished for no reason at all (though I later submitted it to SBGames 2013). And I really like some of the bullet patterns and the last stage's song."
+    ]
+}
