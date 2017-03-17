@@ -36,13 +36,14 @@ class CustomRenderer(Renderer):
 class CustomBlockLexer(BlockLexer):
     """Custom block lexer. It adds the following rules:
 
-    \$add_game(list_name, json_file) -- Insert the path to a game's JSON file into a 
+    $add_game(list_name, json_file) -- Insert the path to a game's JSON file into a 
                                        list of games. This list is stored in _game.
-    \$add_style(css_file) -- Store a css file to be added on the header.
-    \$add_script(js_file) -- Store a javascript file to be added on the header.
-    \$write_header -- Writes a HTML header to the current file (if any). The presence
+    $add_style(css_file) -- Store a css file to be added on the header.
+    $add_script(js_file) -- Store a javascript file to be added on the header.
+    $write_header -- Writes a HTML header to the current file (if any). The presence
                      of any game on _game triggers the addition of the game overlay.
-    \$begin_content -- Output the content's "prologue".
+    $begin_content -- Output the content's "prologue".
+    !<[Alternative text](image_url)
     """
 
     def my_setup(self, ctx):
@@ -152,8 +153,8 @@ class CustomBlockLexer(BlockLexer):
 class CustomInlineLexer(InlineLexer):
     """Custom inline lexer. It adds the following rules:
 
-    \$insert_game_list(list_name) -- Insert the icons for the given list of games.
-    \$end_content -- Output the content's "epilogue" and finish writing to the output.
+    $insert_game_list(list_name) -- Insert the icons for the given list of games.
+    $end_content -- Output the content's "epilogue" and finish writing to the output.
     """
 
     def my_setup(self, ctx):
