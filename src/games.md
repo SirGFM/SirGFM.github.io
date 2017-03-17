@@ -38,8 +38,8 @@ them, I usually set a competition as the deadline (like
 
 $insert_game_list(games)
 
-\* **Note:** I only wronte "complete" because I consider any game in this page,
-one way or another, as complete... even the most broken ones...
+\* **Note:** I only wrote "complete" because I consider any game in this page,
+one way or another, as complete (even the most broken ones).
 
 $end_content
 

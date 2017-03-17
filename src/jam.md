@@ -52,8 +52,8 @@ $insert_game_list(campjam)
 
 ## Others
 
-This category has games from jams that I haven't taken part of enough event to
-warrantry their own separated categories.
+This category has games from jams that I have only taken part a few times, so
+there was no reason to create a separated category for them.
 
 $insert_game_list(others)
 

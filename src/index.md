@@ -11,12 +11,11 @@ Hello! I'm Gabriel Francisco Mandaji (aka, GFM) a software developer and
 hobbyist game developer.
 
 I used to play around with RPG Maker and Flash (ActionScript 3 + Flixel), but
-nowadays, except for the ocasional Python script (like this site), most of my
+nowadays, except for the occasional Python script (like this site), most of my
 projects are written in C. Reinventing the wheel is fun and great for learning!
 
-Here you may find links and descriptions for most of the games I've developed.
-Select a category above to explore its games. (NOTE: This page is still a WIP
-and some games may have broken links...)
+For now, this page is mostly a portfolio with the game I've made. Eventually, I
+plan to also start to write blog posts directly here.
 
 # Current projects
 
@@ -46,10 +45,10 @@ version will be started, though...
 ## c_synth
 
 Synthesizes MML-like songs into waveforms. It uses a custom language that was
-never properlly documented...
+never properly documented...
 
 An enhanced version has been started but is currently stopped. It will have
-proper documentantion, use a fixed amount of memory and synthesize songs on
+proper documentation, use a fixed amount of memory and synthesize songs on
 runtime, allowing some effects to be applied to a song or to its tracks
 separately.
 
