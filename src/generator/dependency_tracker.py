@@ -78,10 +78,13 @@ def main(src, output_name):
             for game in webgame_list:
                 buff.write(game[0])
             buff.write('', force=True)
+            print ''
         # And create the rules to generate its pages
         for game in webgame_list:
             print '{}: {}'.format(game[0], game[1])
-            print '\t @ echo "TODO create the page for $@"'
+            print '\t@ echo "Rendering $@..."'
+            print '\t@ $(PPATH) python src/generator/web_game_renderer.py $(PWD)/$< $(PWD)/$@ $(PWD)/src/nav.txt'
+            print ''
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
