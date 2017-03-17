@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-		<title>GFM's Game Corner (GFM's homepage)</title>
-		<meta name="description" content="" />
+    <head>
+        <title> GFM's Game Corner </title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content="gamedev" />
+        <meta name="description" content="GFM's homepage" />
+        <meta name="author" content="Gabriel Francisco Mandaji" />
         <link rel="shortcut icon" href="/favicon.ico?" />
+        <link rel="stylesheet" type="text/css" href="/style/page.css" />
     </head>
-
-	<body>
-        <p>It works!</p>
-	</body>
+    <body>
+        <div id="page-header" class="header">
+        <a class="header" href="/">
+            <img class="header nearest-neighbor" src="/img/title/01_gfms.png"> </img>
+            <img class="header nearest-neighbor" src="/img/title/02_game.png"> </img>
+            <img class="header nearest-neighbor" src="/img/title/03_corner.png"> </img>
+        </a>
+        <a class="header" href="https://github.com/SirGFM" title="Check out my projects on Github">
+            <img class="socialbt" src="/img/button/GitHub-Mark-Light-32px.png"> </img>
+        </a>
+        <a class="header" href="https://twitter.com/SirGFM" title="Follow me on Twitter">
+            <img class="socialbt" src="/img/button/Twitter_Social_Icon_Circle_Color.png"> </img>
+        </a>
+    </div> <!-- page-header -->
+    <div id="page-sidebar" class="content">
+        <div id="page-sidebar" class="sidebar">
+            <a class="sidebar" href="/
+"> HOME </a>
+            <a class="sidebar" href="/games.html
+"> GAMES </a>
+            <a class="sidebar" href="/ldjam.html
+"> LDJAM </a>
+            <a class="sidebar" href="/jam.html
+"> OTHER JAMS </a>
+            <a class="sidebar" href="https://gfmgamecorner.wordpress.com/
+"> BLOG (external) </a>
+        </div> <!-- page-sidebar -->
+    </div> <!-- page-sidebar -->
+    <div id="page-content" class="content">
+        <img class="content nearest-neighbor" style="float:left;" src="/img/home/avatar.png" alt="avatar">  </img>
+        <p class=content>Hello! I'm Gabriel Francisco Mandaji (aka, GFM) a software developer and
+hobbyist game developer.</p>
+        <p class=content>I used to play around with RPG Maker and Flash (ActionScript 3 + Flixel), but
+nowadays, except for the occasional Python script (like this site), most of my
+projects are written in C. Reinventing the wheel is fun and great for learning!</p>
+        <p class=content>For now, this page is mostly a portfolio with the game I've made. Eventually, I
+plan to also start to write blog posts directly here.</p>
+        <h1 class="content">Current projects</h1>
+</h1>
+        <h2 class="content">JJAT 1.5</h2>
+</h2>
+        <p class=content>Enhanced version of JJAT. Play with a friend or control two characters at once
+on this action platformer.</p>
+        <p class=content>Different from the original game, each character will have a distinct role.
+"Swordy" can attack enemies, is quicker and has double jump. "Gunny" is way less
+agile but has a teleport gun, which actually switch the character and the
+targeted entity.</p>
+        <p class=content><a href="https://github.com/SirGFM/jjat_2">Check JJAT 1.5's repository on Github.</a></p>
+        <h2 class="content">GFraMe</h2>
+</h2>
+        <p class=content>My personal framework for making games. It's SDL2 based and has features to
+allow instanced drawing (i.e., it may handle thousands of sprites at 120 FPS)
+and easily rebindable controls. It's also integrated with my synthesizer, so
+songs are usually simple text files (which requires way less storage than
+sound files).</p>
+        <p class=content>It's always being enhanced, and the next planned refactor should enable
+supporting older platforms (e.g.,  Mega Drive/Sega Genesis through
+<a href="https://github.com/kubilus1/gendev">GENDEV</a>). I don't know when this new
+version will be started, though...</p>
+        <p class=content><a href="https://github.com/SirGFM/GFraMe">Check GFraMe's repository on Github.</a></p>
+        <h2 class="content">c_synth</h2>
+</h2>
+        <p class=content>Synthesizes MML-like songs into waveforms. It uses a custom language that was
+never properly documented...</p>
+        <p class=content>An enhanced version has been started but is currently stopped. It will have
+proper documentation, use a fixed amount of memory and synthesize songs on
+runtime, allowing some effects to be applied to a song or to its tracks
+separately.</p>
+        <p class=content><a href="https://github.com/SirGFM/c_synth">Check c_synth's repository on Github.</a></p>
+    </div> <!-- content -->
+    <div id="page-footer" class="footer">
+        <p class="footer"> &copy;GFM (2017) </p>
+    </div> <!-- content -->
+</body>
 </html>
-
