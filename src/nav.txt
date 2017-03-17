@@ -1,0 +1,6 @@
+# Ordered list of entries on the navigation bar
+
+HOME, /
+GAMES, /games.html
+LDJAM, /ldjam.html
+OTHER JAMS, /jam.html
