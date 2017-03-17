@@ -56,6 +56,45 @@ class CustomWriter():
         else:
             self._write_tagged('{} class="{}"'.format(tag, style), string, tag, do_break)
 
+    def open_html_tag(self):
+        """Open (i.e., write) the main HTML tag"""
+        self.write('<!DOCTYPE html>')
+        self.write('<html lang="en">')
+        self.tab()
+
+    def close_html_tag(self):
+        """Close (i.e., write) the main HTML tag"""
+        self.untab()
+        self.write('</html>')
+
+    def write_html_header(self):
+        """Write the HTML header"""
+        self.write('<head>')
+        self.tab()
+        self.write_tagged('title', PAGE_TITLE)
+        self.write('<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />')
+        self.write('<meta name="keywords" content="{}" />'.format(PAGE_KEYWORDS))
+        self.write('<meta name="description" content="{}" />'.format(PAGE_DESCRIPTION))
+        self.write('<meta name="author" content="{}" />'.format(PAGE_AUTHOR))
+        self.write('<link rel="shortcut icon" href="{}" />'.format(PAGE_ICON))
+        for style in self.style:
+            self.write('<link rel="stylesheet" type="text/css" href="/style/{}" />'.format(style))
+        for script in self.script:
+            self.write('<script type="text/javascript" src="/script/{}"></script>'.format(script))
+        for _list in self.game.values():
+            for jfile in _list:
+                filename = path.basename(jfile)
+                filename = filename.replace('.json', '')
+                self.write('<script type="application/json" id="{}-json">'.format(filename))
+                self.tab()
+                with open(jfile, 'rt') as f:
+                    for line in f:
+                        self.write(line, do_break=False)
+                self.untab()
+                self.write('</script>')
+        self.untab()
+        self.write('</head>')
+
     def write_sidebar(self):
         self.write('<div id="page-sidebar" class="sidebar">')
         self.tab()
@@ -71,6 +110,75 @@ class CustomWriter():
                 self.write('<a class="sidebar" href="{}"> {} </a>'.format(_url, _title))
         self.untab()
         self.write('</div> <!-- page-sidebar -->')
+
+    def write_body_begin(self):
+        """Write the static part of the beginning of the page's body"""
+        self.write('<body>')
+        self.tab()
+        # Add the game overlay
+        if len(self.game) > 0:
+            self.write('<div id="floating-game-detail" class="game_description">')
+            self.tab()
+            self.write_classy('h1', 'game_description', 'None', id='detail-title')
+            self.write_classy('h2', 'game_description', 'None', id='detail-jam-title')
+            self.write_classy('div', 'game_description_content', 'None', id='detail-jam-content')
+            self.write_classy('h2', 'game_description', 'None', id='detail-about-title')
+            self.write_classy('div', 'game_description_content', 'None', id='detail-about')
+            self.write_classy('h2', 'game_description', 'None', id='detail-download-title')
+            self.write_classy('div', 'game_description_content', 'None', id='detail-download')
+            self.write_classy('p', 'close_game_description', 'Close', id='detail-close')
+            self.untab()
+            self.write('</div> <!-- floating-game-detail -->')
+            self.tab()
+
+        # Add the header
+        if True:
+            self.write('<div id="page-header" class="header">')
+            self.write('<a class="header" href="/">')
+            self.tab()
+            self.write('<img class="header nearest-neighbor" src="/img/title/01_gfms.png"> </img>')
+            self.write('<img class="header nearest-neighbor" src="/img/title/02_game.png"> </img>')
+            self.write('<img class="header nearest-neighbor" src="/img/title/03_corner.png"> </img>')
+            self.untab()
+            self.write('</a>')
+
+            self.write('<a class="header" href="https://github.com/SirGFM" title="Check out my projects on Github">')
+            self.tab()
+            self.write('<img class="socialbt" src="/img/button/GitHub-Mark-Light-32px.png"> </img>')
+            self.untab()
+            self.write('</a>')
+
+            self.write('<a class="header" href="https://twitter.com/SirGFM" title="Follow me on Twitter">')
+            self.tab()
+            self.write('<img class="socialbt" src="/img/button/Twitter_Social_Icon_Circle_Color.png"> </img>')
+            self.untab()
+            self.write('</a>')
+
+            self.untab()
+            self.write('</div> <!-- page-header -->')
+
+        self.write('<div id="page-sidebar" class="content">')
+        self.tab()
+        self.write_sidebar()
+        self.untab()
+        self.write('</div> <!-- page-sidebar -->')
+
+        self.write('<div id="page-content" class="content">')
+        self.tab()
+
+    def write_body_end(self):
+        """Write the static part of the ending of the page's body"""
+        self.untab()
+        self.write('</div> <!-- content -->')
+
+        self.write('<div id="page-footer" class="footer">')
+        self.tab()
+        self.write_classy('p', 'footer', PAGE_FOOTER)
+        self.untab()
+        self.write('</div> <!-- content -->')
+
+        self.untab()
+        self.write('</body>')
 
 class CustomRenderer(Renderer):
     """Custom renderer with all my markdown extensions.
@@ -181,31 +289,7 @@ class CustomBlockLexer(BlockLexer):
 
     def parse_write_header(self, m):
         """Write the HTML header"""
-        self._ctx.write('<head>')
-        self._ctx.tab()
-        self._ctx.write_tagged('title', PAGE_TITLE)
-        self._ctx.write('<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />')
-        self._ctx.write('<meta name="keywords" content="{}" />'.format(PAGE_KEYWORDS))
-        self._ctx.write('<meta name="description" content="{}" />'.format(PAGE_DESCRIPTION))
-        self._ctx.write('<meta name="author" content="{}" />'.format(PAGE_AUTHOR))
-        self._ctx.write('<link rel="shortcut icon" href="{}" />'.format(PAGE_ICON))
-        for style in self._ctx.style:
-            self._ctx.write('<link rel="stylesheet" type="text/css" href="/style/{}" />'.format(style))
-        for script in self._ctx.script:
-            self._ctx.write('<script type="text/javascript" src="/script/{}"></script>'.format(script))
-        for _list in self._ctx.game.values():
-            for jfile in _list:
-                filename = path.basename(jfile)
-                filename = filename.replace('.json', '')
-                self._ctx.write('<script type="application/json" id="{}-json">'.format(filename))
-                self._ctx.tab()
-                with open(jfile, 'rt') as f:
-                    for line in f:
-                        self._ctx.write(line, do_break=False)
-                self._ctx.untab()
-                self._ctx.write('</script>')
-        self._ctx.untab()
-        self._ctx.write('</head>')
+        self._ctx.write_html_header()
 
         return ''
 
@@ -216,59 +300,7 @@ class CustomBlockLexer(BlockLexer):
 
     def parse_begin_content(self, m):
         """Write the prologue for the page's content"""
-        self._ctx.write('<body>')
-        self._ctx.tab()
-        # Add the game overlay
-        if len(self._ctx.game) > 0:
-            self._ctx.write('<div id="floating-game-detail" class="game_description">')
-            self._ctx.tab()
-            self._ctx.write_classy('h1', 'game_description', 'None', id='detail-title')
-            self._ctx.write_classy('h2', 'game_description', 'None', id='detail-jam-title')
-            self._ctx.write_classy('div', 'game_description_content', 'None', id='detail-jam-content')
-            self._ctx.write_classy('h2', 'game_description', 'None', id='detail-about-title')
-            self._ctx.write_classy('div', 'game_description_content', 'None', id='detail-about')
-            self._ctx.write_classy('h2', 'game_description', 'None', id='detail-download-title')
-            self._ctx.write_classy('div', 'game_description_content', 'None', id='detail-download')
-            self._ctx.write_classy('p', 'close_game_description', 'Close', id='detail-close')
-            self._ctx.untab()
-            self._ctx.write('</div> <!-- floating-game-detail -->')
-
-        # Add the header
-        if True:
-            self._ctx.write('<div id="page-header" class="header">')
-            self._ctx.tab()
-
-            self._ctx.write('<a class="header" href="/">')
-            self._ctx.tab()
-            self._ctx.write('<img class="header nearest-neighbor" src="/img/title/01_gfms.png"> </img>')
-            self._ctx.write('<img class="header nearest-neighbor" src="/img/title/02_game.png"> </img>')
-            self._ctx.write('<img class="header nearest-neighbor" src="/img/title/03_corner.png"> </img>')
-            self._ctx.untab()
-            self._ctx.write('</a>')
-
-            self._ctx.write('<a class="header" href="https://github.com/SirGFM" title="Check out my projects on Github">')
-            self._ctx.tab()
-            self._ctx.write('<img class="socialbt" src="/img/button/GitHub-Mark-Light-32px.png"> </img>')
-            self._ctx.untab()
-            self._ctx.write('</a>')
-
-            self._ctx.write('<a class="header" href="https://twitter.com/SirGFM" title="Follow me on Twitter">')
-            self._ctx.tab()
-            self._ctx.write('<img class="socialbt" src="/img/button/Twitter_Social_Icon_Circle_Color.png"> </img>')
-            self._ctx.untab()
-            self._ctx.write('</a>')
-
-            self._ctx.untab()
-            self._ctx.write('</div> <!-- page-header -->')
-
-        self._ctx.write('<div id="page-content" class="content">')
-        self._ctx.tab()
-        self._ctx.write_sidebar()
-        self._ctx.untab()
-        self._ctx.write('</div> <!-- page-content -->')
-
-        self._ctx.write('<div id="page-content" class="content">')
-        self._ctx.tab()
+        self._ctx.write_body_begin()
 
         return ''
 
@@ -362,17 +394,7 @@ class CustomInlineLexer(InlineLexer):
 
     def output_end_content(self, m):
         """Write the epilogue for the page's content"""
-        self._ctx.untab()
-        self._ctx.write('</div> <!-- content -->')
-
-        self._ctx.write('<div id="page-footer" class="footer">')
-        self._ctx.tab()
-        self._ctx.write_classy('p', 'footer', PAGE_FOOTER)
-        self._ctx.untab()
-        self._ctx.write('</div> <!-- content -->')
-
-        self._ctx.untab()
-        self._ctx.write('</body>')
+        self._ctx.write_body_end()
 
         return ''
 
@@ -382,10 +404,7 @@ def main(markdown, src, dst, nav):
         markdown.inline.my_setup(ctx)
         markdown.block.my_setup(ctx)
 
-        ctx.write('<!DOCTYPE html>')
-        ctx.write('<html lang="en">')
-        ctx.tab()
-
+        ctx.open_html_tag()
         # The rendered markdown is automatically redirected through the CustomWriter
         txt = ''
         with open(src, 'rt') as fp:
@@ -393,8 +412,7 @@ def main(markdown, src, dst, nav):
                 txt += line
         print markdown(txt)
 
-        ctx.untab()
-        ctx.write('</html>')
+        ctx.close_html_tag()
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
