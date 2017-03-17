@@ -73,6 +73,8 @@ def main(src, output_name):
                             break
                 except:
                     pass
+        # Also add the navigation bar as a dependency
+        buff.write('src/nav.txt')
         # Append the webgames as dependencies
         if buff is not None:
             for game in webgame_list:
@@ -81,6 +83,7 @@ def main(src, output_name):
             print ''
         # And create the rules to generate its pages
         for game in webgame_list:
+            print '{}: {} src/nav.txt'.format(game[0], game[1])
             print '{}: {}'.format(game[0], game[1])
             print '\t@ echo "Rendering $@..."'
             print '\t@ $(PPATH) python src/generator/web_game_renderer.py $(PWD)/$< $(PWD)/$@ $(PWD)/src/nav.txt'

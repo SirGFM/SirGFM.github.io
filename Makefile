@@ -13,7 +13,7 @@ OBJ := $(SRC:src/%.md=%.html)
 .SUFFIXES:
 .PHONY: all clean start README.html
 
-all: start clean_nav $(OBJ)
+all: start $(OBJ)
 	@ echo -n "Finished rendering: "
 	@ date
 
@@ -32,12 +32,6 @@ start:
 %.d: src/%.md
 	@ echo "Creating dependency list for $<..."
 	@ python src/generator/dependency_tracker.py $< $@ > $@
-
-# Force everything to be rebuilt
-clean_nav: src/nav.txt
-	@ echo "Sidebar was modified! Recreating everything..."
-	@ rm -f $(OBJ) $(OBJ:%.html=%.d)
-	@ touch clean_nav
 
 clean:
 	@ echo "Cleaning all files..."
