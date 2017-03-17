@@ -122,7 +122,8 @@ class CustomWriter():
             self.write_classy('div', 'game_description_content', 'None', id='detail-about')
             self.write_classy('h2', 'game_description', 'None', id='detail-download-title')
             self.write_classy('div', 'game_description_content', 'None', id='detail-download')
-            self.write_classy('p', 'close_game_description', 'Close', id='detail-close')
+            # Inject the function through the class, by manually setting up the \"
+            self.write_classy('p', 'close_game_description" onclick="HideGameDescription()"', 'Close', id='detail-close')
             self.untab()
             self.write('</div> <!-- floating-game-detail -->')
             self.tab()
