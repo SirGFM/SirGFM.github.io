@@ -9,6 +9,8 @@ def main(src, dst, nav):
     with open(dst, 'wt') as out:
         ctx = CustomWriter(out, nav)
 
+        ctx.style.append('page.css')
+
         ctx.open_html_tag()
         ctx.write_html_header()
         ctx.write_body_begin()
