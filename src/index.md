@@ -29,6 +29,8 @@ Different from the original game, each character will have a distinct role.
 agile but has a teleport gun, which actually switch the character and the
 targeted entity.
 
+[Check JJAT 1.5's repository on Github.](https://github.com/SirGFM/jjat_2)
+
 ## GFraMe
 
 My personal framework for making games. It's SDL2 based and has features to
@@ -42,6 +44,8 @@ supporting older platforms (e.g.,  Mega Drive/Sega Genesis through
 [GENDEV](https://github.com/kubilus1/gendev)). I don't know when this new
 version will be started, though...
 
+[Check GFraMe's repository on Github.](https://github.com/SirGFM/GFraMe)
+
 ## c_synth
 
 Synthesizes MML-like songs into waveforms. It uses a custom language that was
@@ -51,6 +55,8 @@ An enhanced version has been started but is currently stopped. It will have
 proper documentation, use a fixed amount of memory and synthesize songs on
 runtime, allowing some effects to be applied to a song or to its tracks
 separately.
+
+[Check c_synth's repository on Github.](https://github.com/SirGFM/c_synth)
 
 $end_content
 

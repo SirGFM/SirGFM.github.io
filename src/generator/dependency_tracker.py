@@ -74,13 +74,14 @@ def main(src, output_name):
                 except:
                     pass
         # Also add the navigation bar as a dependency
+        if buff is None:
+            buff = BufferedWriter(txt='{} {}: {}'.format(d_name, html_name, src))
         buff.write('src/nav.txt')
         # Append the webgames as dependencies
-        if buff is not None:
-            for game in webgame_list:
-                buff.write(game[0])
-            buff.write('', force=True)
-            print ''
+        for game in webgame_list:
+            buff.write(game[0])
+        buff.write('', force=True)
+        print ''
         # And create the rules to generate its pages
         for game in webgame_list:
             print '{}: {} src/nav.txt'.format(game[0], game[1])

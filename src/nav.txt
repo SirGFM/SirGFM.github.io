@@ -4,3 +4,4 @@ HOME, /
 GAMES, /games.html
 LDJAM, /ldjam.html
 OTHER JAMS, /jam.html
+BLOG (external), https://gfmgamecorner.wordpress.com/
