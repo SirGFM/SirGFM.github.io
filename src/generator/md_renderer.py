@@ -188,8 +188,7 @@ class CustomInlineLexer(InlineLexer):
             _title = _decoded['title']
 
             self._ctx.write('<div id="{}" class="gamelisting" '
-                    'onclick="SetGameDescription(this); '
-                    'ToggleGameDescriptionVisibility()">'.format(_id))
+                    'onclick="SetupToggleGameDescription(this);">'.format(_id))
             self._ctx.tab()
             self._ctx.write('<div id="{}-icon" class="gameicon" onmouseover='
                     '"ShowGameDetails(this)" onmouseout="HideGameDetails(this)" '

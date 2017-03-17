@@ -7,6 +7,7 @@
 /** Cached game description overlay */
 var _overlay = null
 var _isVisible = false
+var _id = ''
 
 const _left = 0x01
 const _right = 0x02
@@ -51,7 +52,8 @@ var _params = {
         curTime: 0,
         animTime: 1000,
         frameTime: 16,
-        curAnim: -1}
+        curAnim: -1,
+        callback:null}
 
 /** Play the animation described in '_params' until its completion */
 function _PlayAnimation() {
@@ -71,16 +73,21 @@ function _PlayAnimation() {
         if (_params.dir == _left) {
             _overlay.style.visibility = 'hidden'
         }
+
+        if (_params.callback) {
+            setTimeout(function() {_params.callback()}, _params.frameTime)
+        }
     }
 }
 
 /**
  * Setup '_params' and start the BG job for the animation
  *
- * @param  [ in]dir  Either _left or _right (direction of the movement)
- * @param  [ in]dest Position of the overlay after the animation
+ * @param  [ in]dir      Either _left or _right (direction of the movement)
+ * @param  [ in]dest     Position of the overlay after the animation
+ * @param  [ in]callback Function called as soon as this animation finishes
  */
-function _StartAnimation(dir, dest) {
+function _StartAnimation(dir, dest, callback) {
     _PrepareGameDescription()
 
     /* Initialize the animation's parameters */
@@ -95,6 +102,7 @@ function _StartAnimation(dir, dest) {
     _params.animTime = _animTime
     _params.frameTime = _frameTime
     _params.curAnim = -1
+    _params.callback = callback
 
     /* Ensure the overlay is on the correct position, and visible */
     if (_params.curTime == 0 || _params.curTime > _params.animTime) {
@@ -316,14 +324,14 @@ function SetGameDescription(ctx) {
 function ShowGameDescription() {
     _PrepareGameDescription()
 
-    _StartAnimation(_right, 0)
+    _StartAnimation(_right, 0, null)
     _isVisible = true
 }
 
-function HideGameDescription() {
+function HideGameDescription(callback) {
     _PrepareGameDescription()
 
-    _StartAnimation(_left, -_overlay.clientWidth - 32)
+    _StartAnimation(_left, -_overlay.clientWidth - 32, callback)
     _isVisible = false
 }
 
@@ -331,11 +339,37 @@ function ToggleGameDescriptionVisibility() {
     _PrepareGameDescription()
 
     if (_isVisible) {
-        HideGameDescription()
+        HideGameDescription(null)
     }
     else if (!_isVisible) {
         ShowGameDescription()
     }
+}
+
+function SetupToggleGameDescription(ctx) {
+    _PrepareGameDescription()
+
+    var name = ctx.getAttribute('id')
+
+    if (!_isVisible) {
+        /* Simply setup and show */
+        SetGameDescription(ctx)
+        ShowGameDescription()
+    }
+    else if (_id == name) {
+        /* Simply hide it */
+        HideGameDescription(null)
+    }
+    else {
+        /* In order: hide the overlay, then setup everything and show the
+         * overlay */
+        HideGameDescription(function() {
+            SetGameDescription(ctx)
+            ShowGameDescription()
+        })
+    }
+
+    _id = name
 }
 
 /* Setup a event for scrolling, so the overlay is always centered */
