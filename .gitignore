@@ -1,7 +1,9 @@
 
-# Ignore all swap files
+# Ignore all swap/compiled files
 *.swp
 *.pyc
 
+# Ignore temporary files used by the Makefile
 clean_nav
+*.d
 
