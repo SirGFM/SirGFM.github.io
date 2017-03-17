@@ -1,4 +1,6 @@
 
+# Add the generator to the python path
+PYTHONPATH := $(PYTHONPATH):$(PWD)/src/generator/
 # Setup the path to mistune lib (if not on the system's)
 MISTUNE_PATH ?= /opt/mistune
 ifneq (, $(MISTUNE_PATH))
