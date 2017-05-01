@@ -12,6 +12,47 @@
         <link rel="stylesheet" type="text/css" href="/style/game_description.css" />
         <script type="text/javascript" src="/script/mouseover.js"></script>
         <script type="text/javascript" src="/script/game_description.js"></script>
+        <script type="application/json" id="ld38-json">
+            {
+                "id": "ld38",
+                "title": "It's a Small World",
+                "image": "ld/ld38.png",
+                "release_date": "2017-04-23",
+                "event": {
+                    "title": "Ludum Dare",
+                    "edition": "#38 (compo)",
+                    "theme": "A Small World",
+                    "start_date": "2017-04-21",
+                    "end_date": "2017-04-23",
+                    "page": "https://ldjam.com/events/ludum-dare/38/its-a-small-world-4",
+                    "source": "https://github.com/SirGFM/ld38/tree/v1.0.0.a",
+                    "timelapse": "https://youtu.be/macOZQo9QfY"
+                },
+                "distribution": [
+                    {
+                        "platform": "Windows 64 bits",
+                        "link": "https://github.com/SirGFM/ld38/releases/download/v1.0.0.a/gfm_ld38_its_a_small_world_win64.zip"
+                    },
+                    {
+                        "platform": "Windows 32 bits",
+                        "link": "https://github.com/SirGFM/ld38/releases/download/v1.0.0.a/gfm_ld38_its_a_small_world_win32.zip"
+                    },
+                    {
+                        "platform": "Linux 64 bits",
+                        "link": "https://github.com/SirGFM/ld38/releases/download/v1.0.0.a/gfm_ld38_its_a_small_world_linux64.tar.gz"
+                    },
+                    {
+                        "platform": "Linux 32 bits",
+                        "link": "https://github.com/SirGFM/ld38/releases/download/v1.0.0.a/gfm_ld38_its_a_small_world_linux32.tar.gz"
+                    }
+                ],
+                "tools": ["SDL2", "GFraMe v2", "c_synth"],
+                "description": [
+                    "Short prototype of adventure game. I used it mostly as a way to explore how this kind of game could be implemented.",
+                    "It's main inspiration was that situation in which you meet someone in an unexpected place and get that feeling of \"This is such a small world!\"."
+                ]
+            }
+        </script>
         <script type="application/json" id="ld37-json">
             {
                 "id": "ld37",
@@ -629,6 +670,15 @@
 </h1>
             <p class=content>List of games I've made for <a href="http://www.ludumdare.com/">Ludum Dare</a>, a 48h-72h game jam.</p>
             <div style="display:table; margin:auto">
+                <div id="ld38" class="gamelisting" onclick="SetupToggleGameDescription(this);">
+                    <div id="ld38-icon" class="gameicon" onmouseover="ShowGameDetails(this)" onmouseout="HideGameDetails(this)" style="background-image:url('/img/game/icon/ld/ld38.png')">
+                        <div id="ld38-overlay" class="gameiconoverlay">
+                            <div id="ld38-inner-title" class="gameicontitle noselect" >
+                                <h1 class="gameicontitle"> It's a Small World </h1>
+                            </div> <!-- ld38-inner-title -->
+                        </div> <!-- ld38-overlay -->
+                    </div> <!-- ld38-icon -->
+                </div> <!-- ld38 gamelisting -->
                 <div id="ld37" class="gamelisting" onclick="SetupToggleGameDescription(this);">
                     <div id="ld37-icon" class="gameicon" onmouseover="ShowGameDetails(this)" onmouseout="HideGameDetails(this)" style="background-image:url('/img/game/icon/ld/ld37.png')">
                         <div id="ld37-overlay" class="gameiconoverlay">

@@ -1,4 +1,5 @@
 
+$add_game(ldjam, src/game/ldjam/ld38.json)
 $add_game(ldjam, src/game/ldjam/ld37.json)
 $add_game(ldjam, src/game/ldjam/ld36.json)
 $add_game(ldjam, src/game/ldjam/ld35.json)
