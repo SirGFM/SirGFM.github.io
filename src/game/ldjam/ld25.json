@@ -17,8 +17,8 @@
             "platform": "web",
             "link": "/webgames/ld25/ld25.html",
             "technology": "flash",
-            "width": "500",
-            "height": "500",
+            "width": "640",
+            "height": "480",
             "how_to_play": [
                 "Move with arrow keys",
                 "Press X and C to attack",
