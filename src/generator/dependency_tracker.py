@@ -81,19 +81,19 @@ def main(src, output_name):
         for game in webgame_list:
             buff.write(game[0])
         buff.write('', force=True)
-        print ''
+        print('')
         # And create the rules to generate its pages
         for game in webgame_list:
-            print '{}: {} src/nav.txt'.format(game[0], game[1])
-            print '{}: {}'.format(game[0], game[1])
-            print '\t@ echo "Rendering $@..."'
-            print '\t@ $(PPATH) python src/generator/web_game_renderer.py $(PWD)/$< $(PWD)/$@ $(PWD)/src/nav.txt'
-            print ''
+            print('{}: {} src/nav.txt'.format(game[0], game[1]))
+            print('{}: {}'.format(game[0], game[1]))
+            print('\t@ echo "Rendering $@..."')
+            print('\t@ $(PPATH) python3 src/generator/web_game_renderer.py $(PWD)/$< $(PWD)/$@ $(PWD)/src/nav.txt')
+            print('')
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
-        print 'Usage: {} input_file output_name'
-        print 'NOTE: Output is printed to stdout'
+        print('Usage: {} input_file output_name')
+        print('NOTE: Output is printed to stdout')
         sys.exit(1)
 
     src = sys.argv[1]

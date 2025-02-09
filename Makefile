@@ -23,7 +23,7 @@ start:
 
 %.html: src/%.md
 	@ echo "Rendering $@..."
-	@ $(PPATH) python src/generator/md_renderer.py $(PWD)/$< $(PWD)/$@ $(PWD)/src/nav.txt
+	@ $(PPATH) python3 src/generator/md_renderer.py $(PWD)/$< $(PWD)/$@ $(PWD)/src/nav.txt
 
 # Include every rule from a depency (properly tracks header dependency)
 -include $(OBJ:%.html=%.d)
@@ -31,7 +31,7 @@ start:
 # Creates the dependency list
 %.d: src/%.md
 	@ echo "Creating dependency list for $<..."
-	@ python src/generator/dependency_tracker.py $< $@ > $@
+	@ python3 src/generator/dependency_tracker.py $< $@ > $@
 
 clean:
 	@ echo "Cleaning all files..."

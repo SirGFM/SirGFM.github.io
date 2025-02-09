@@ -7,7 +7,7 @@ PAGE_KEYWORDS = 'gamedev'
 PAGE_DESCRIPTION = 'GFM\'s homepage'
 PAGE_AUTHOR = 'Gabriel Francisco Mandaji'
 PAGE_ICON = '/favicon.ico?'
-PAGE_FOOTER = '&copy;GFM (2017)'
+PAGE_FOOTER = '&copy;GFM (2025)'
 
 class CustomWriter():
     """Encapsulates writes to the output file, so all classes do it from the same context"""

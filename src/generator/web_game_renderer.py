@@ -45,12 +45,14 @@ def main(src, dst, nav):
         for p in how_to_play:
             ctx.write_classy('p', 'content', p)
 
+        ctx.write('<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>')
+
         ctx.write_body_end()
         ctx.close_html_tag()
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print 'Usage: {} input_file output_file nav_file'
+        print('Usage: {} input_file output_file nav_file')
         sys.exit(1)
 
     src = sys.argv[1]

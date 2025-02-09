@@ -235,13 +235,13 @@ def main(markdown, src, dst, nav):
         with open(src, 'rt') as fp:
             for line in fp:
                 txt += line
-        print markdown(txt)
+        print(markdown(txt))
 
         ctx.close_html_tag()
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print 'Usage: {} input_file output_file nav_file'
+        print('Usage: {} input_file output_file nav_file')
         sys.exit(1)
 
     src = sys.argv[1]
